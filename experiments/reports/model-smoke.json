@@ -1,0 +1,186 @@
+{
+  "config": {
+    "model_id": "Qwen/Qwen3-1.7B",
+    "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+    "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+    "dtype": "bfloat16",
+    "device": "cuda",
+    "attention": "sdpa",
+    "threads": 4,
+    "seed": 42,
+    "max_input_tokens": 16384,
+    "max_new_tokens": 512,
+    "do_sample": false,
+    "enable_thinking": false,
+    "prompt_version": "zero-shot-v1"
+  },
+  "environment": {
+    "python": "3.12.13",
+    "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+    "cpu": "x86_64",
+    "torch": "2.7.1+cu128",
+    "transformers": "4.57.6",
+    "cuda_runtime": "12.8",
+    "threads": "4",
+    "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+    "precision": "bfloat16",
+    "attention": "sdpa"
+  },
+  "results": [
+    {
+      "record": {
+        "incident_id": "case-1710bcf16c21797d8c0ab4e0",
+        "run": {
+          "run_id": "qwen-70d244cc86cc-000000000000-5a81f78e26d6",
+          "backend_id": "transformers/Qwen/Qwen3-1.7B",
+          "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "prompt_version": "zero-shot-v1",
+          "decoding_settings": {
+            "model_id": "Qwen/Qwen3-1.7B",
+            "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "dtype": "bfloat16",
+            "device": "cuda",
+            "attention": "sdpa",
+            "threads": 4,
+            "seed": 42,
+            "max_input_tokens": 16384,
+            "max_new_tokens": 512,
+            "do_sample": false,
+            "enable_thinking": false,
+            "prompt_version": "zero-shot-v1"
+          },
+          "seed": 42,
+          "dataset_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "environment": {
+            "python": "3.12.13",
+            "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+            "cpu": "x86_64",
+            "torch": "2.7.1+cu128",
+            "transformers": "4.57.6",
+            "cuda_runtime": "12.8",
+            "threads": "4",
+            "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+            "precision": "bfloat16",
+            "attention": "sdpa",
+            "split": "validation-smoke",
+            "prompt_sha256": "5a81f78e26d613b6d95de7cd9a4a40c3c8bfc16b7c26689ab5bd3fc92de89959",
+            "inference_source_sha256": "e6aa0db4696c37bcc7db88a0754973620e0cf95587cd010c04f1ca5e449cf6e6"
+          }
+        },
+        "raw_response": "{\n  \"incident_id\": \"case-1710bcf16c21797d8c0ab4e0\",\n  \"category\": \"scheduling_failure\",\n  \"root_cause\": \"The pod 'cache-api-v4s7n' was not scheduled due to node affinity/selector conflicts. The pod's node affinity/selector did not match any available nodes, leading to the pod being marked as unschedulable.\",\n  \"evidence_ids\": [\"metadata-1\", \"metadata-2\", \"event-1\", \"status-1\"],\n  \"explanation\": \"The pod was not scheduled because the node affinity/selector constraints did not match any available nodes. The pod's node selector required 'disk' to be 'nvme', but the available nodes had 'disk' set to 'ssd' or 'hdd'. This caused the pod to be unschedulable, resulting in the 'Unschedulable' reason in the pod status.\",\n  \"recommended_checks\": [\n    \"Verify that the node affinity/selector constraints are correctly set and match available nodes.\",\n    \"Check if the pod's node name is explicitly set to a specific node.\"\n  ],\n  \"uncertain\": true\n}",
+        "prediction": {
+          "incident_id": "case-1710bcf16c21797d8c0ab4e0",
+          "category": "scheduling_failure",
+          "root_cause": "The pod 'cache-api-v4s7n' was not scheduled due to node affinity/selector conflicts. The pod's node affinity/selector did not match any available nodes, leading to the pod being marked as unschedulable.",
+          "evidence_ids": [
+            "metadata-1",
+            "metadata-2",
+            "event-1",
+            "status-1"
+          ],
+          "explanation": "The pod was not scheduled because the node affinity/selector constraints did not match any available nodes. The pod's node selector required 'disk' to be 'nvme', but the available nodes had 'disk' set to 'ssd' or 'hdd'. This caused the pod to be unschedulable, resulting in the 'Unschedulable' reason in the pod status.",
+          "recommended_checks": [
+            "Verify that the node affinity/selector constraints are correctly set and match available nodes.",
+            "Check if the pod's node name is explicitly set to a specific node."
+          ],
+          "uncertain": true
+        },
+        "parse_errors": [],
+        "schema_errors": [],
+        "reference_errors": [],
+        "elapsed_seconds": 28.367491940000036
+      },
+      "telemetry": {
+        "incident_id": "case-1710bcf16c21797d8c0ab4e0",
+        "input_tokens": 1302,
+        "output_tokens": 259,
+        "elapsed_seconds": 28.367491940000036,
+        "generated_tokens_per_second": 9.130169157985831,
+        "peak_rss_bytes": 1910493184,
+        "process_lifetime_peak_rss_bytes": 4319891456,
+        "gpu_peak_allocated_bytes": 3678533632,
+        "gpu_peak_reserved_bytes": 3718250496,
+        "inference_error": null
+      }
+    },
+    {
+      "record": {
+        "incident_id": "case-8d34f785254417e5bef152e6",
+        "run": {
+          "run_id": "qwen-70d244cc86cc-000000000000-5a81f78e26d6",
+          "backend_id": "transformers/Qwen/Qwen3-1.7B",
+          "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "prompt_version": "zero-shot-v1",
+          "decoding_settings": {
+            "model_id": "Qwen/Qwen3-1.7B",
+            "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "dtype": "bfloat16",
+            "device": "cuda",
+            "attention": "sdpa",
+            "threads": 4,
+            "seed": 42,
+            "max_input_tokens": 16384,
+            "max_new_tokens": 512,
+            "do_sample": false,
+            "enable_thinking": false,
+            "prompt_version": "zero-shot-v1"
+          },
+          "seed": 42,
+          "dataset_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "environment": {
+            "python": "3.12.13",
+            "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+            "cpu": "x86_64",
+            "torch": "2.7.1+cu128",
+            "transformers": "4.57.6",
+            "cuda_runtime": "12.8",
+            "threads": "4",
+            "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+            "precision": "bfloat16",
+            "attention": "sdpa",
+            "split": "validation-smoke",
+            "prompt_sha256": "5a81f78e26d613b6d95de7cd9a4a40c3c8bfc16b7c26689ab5bd3fc92de89959",
+            "inference_source_sha256": "e6aa0db4696c37bcc7db88a0754973620e0cf95587cd010c04f1ca5e449cf6e6"
+          }
+        },
+        "raw_response": "{\n  \"incident_id\": \"case-8d34f785254417e5bef152e6\",\n  \"category\": \"container_crash\",\n  \"root_cause\": \"The container 'exporter' in the pod 'export-worker-m6q1n' was terminated by OOMKilled, as indicated by the log entry 'Container exporter attempt 1 terminated: reason=OOMKilled, exitCode=137'. The memory usage exceeded the memory limit of 134217728 bytes, leading to the container being killed.\",\n  \"evidence_ids\": [\"termination-1\", \"log-3\"],\n  \"explanation\": \"The log entries show that the container 'exporter' was terminated by OOMKilled due to exceeding the memory limit. The memory usage was 134217728 bytes, which is the same as the memory limit, and the container was killed. This indicates a memory-related failure.\",\n  \"recommended_checks\": [\n    \"Check the memory usage of the container to ensure it does not exceed the memory limit.\",\n    \"Verify the memory limit configuration for the container and ensure it is set appropriately.\",\n    \"Check the logs for any other memory-related errors or warnings.\"\n  ],\n  \"uncertain\": false\n}",
+        "prediction": {
+          "incident_id": "case-8d34f785254417e5bef152e6",
+          "category": "container_crash",
+          "root_cause": "The container 'exporter' in the pod 'export-worker-m6q1n' was terminated by OOMKilled, as indicated by the log entry 'Container exporter attempt 1 terminated: reason=OOMKilled, exitCode=137'. The memory usage exceeded the memory limit of 134217728 bytes, leading to the container being killed.",
+          "evidence_ids": [
+            "termination-1",
+            "log-3"
+          ],
+          "explanation": "The log entries show that the container 'exporter' was terminated by OOMKilled due to exceeding the memory limit. The memory usage was 134217728 bytes, which is the same as the memory limit, and the container was killed. This indicates a memory-related failure.",
+          "recommended_checks": [
+            "Check the memory usage of the container to ensure it does not exceed the memory limit.",
+            "Verify the memory limit configuration for the container and ensure it is set appropriately.",
+            "Check the logs for any other memory-related errors or warnings."
+          ],
+          "uncertain": false
+        },
+        "parse_errors": [],
+        "schema_errors": [],
+        "reference_errors": [],
+        "elapsed_seconds": 11.9583856140016
+      },
+      "telemetry": {
+        "incident_id": "case-8d34f785254417e5bef152e6",
+        "input_tokens": 4179,
+        "output_tokens": 280,
+        "elapsed_seconds": 11.9583856140016,
+        "generated_tokens_per_second": 23.41453178028973,
+        "peak_rss_bytes": 1910493184,
+        "process_lifetime_peak_rss_bytes": 4319891456,
+        "gpu_peak_allocated_bytes": 4155224064,
+        "gpu_peak_reserved_bytes": 4368367616,
+        "inference_error": null
+      }
+    }
+  ]
+}

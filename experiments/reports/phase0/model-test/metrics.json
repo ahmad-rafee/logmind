@@ -1,0 +1,192 @@
+{
+  "n": 50,
+  "scenarios": 14,
+  "responses": 50,
+  "missing_outputs": 0,
+  "correct": 25,
+  "accuracy": 0.5,
+  "answerable_support": 48,
+  "answerable_accuracy": 0.5208333333333334,
+  "macro_f1_six_classes": 0.48209876543209873,
+  "per_class": {
+    "container_crash": {
+      "support": 8,
+      "precision": 0.42105263157894735,
+      "recall": 1.0,
+      "f1": 0.5925925925925926
+    },
+    "oom_killed": {
+      "support": 8,
+      "precision": 0.3333333333333333,
+      "recall": 0.5,
+      "f1": 0.4
+    },
+    "image_pull_failure": {
+      "support": 8,
+      "precision": 0.75,
+      "recall": 0.375,
+      "f1": 0.5
+    },
+    "probe_failure": {
+      "support": 8,
+      "precision": 1.0,
+      "recall": 0.25,
+      "f1": 0.4
+    },
+    "missing_config": {
+      "support": 8,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "scheduling_failure": {
+      "support": 8,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    }
+  },
+  "confusion_matrix": {
+    "container_crash": {
+      "container_crash": 8,
+      "oom_killed": 0,
+      "image_pull_failure": 0,
+      "probe_failure": 0,
+      "missing_config": 0,
+      "scheduling_failure": 0,
+      "insufficient_evidence": 0,
+      "invalid": 0
+    },
+    "oom_killed": {
+      "container_crash": 1,
+      "oom_killed": 4,
+      "image_pull_failure": 0,
+      "probe_failure": 0,
+      "missing_config": 0,
+      "scheduling_failure": 0,
+      "insufficient_evidence": 0,
+      "invalid": 3
+    },
+    "image_pull_failure": {
+      "container_crash": 0,
+      "oom_killed": 5,
+      "image_pull_failure": 3,
+      "probe_failure": 0,
+      "missing_config": 0,
+      "scheduling_failure": 0,
+      "insufficient_evidence": 0,
+      "invalid": 0
+    },
+    "probe_failure": {
+      "container_crash": 6,
+      "oom_killed": 0,
+      "image_pull_failure": 0,
+      "probe_failure": 2,
+      "missing_config": 0,
+      "scheduling_failure": 0,
+      "insufficient_evidence": 0,
+      "invalid": 0
+    },
+    "missing_config": {
+      "container_crash": 3,
+      "oom_killed": 3,
+      "image_pull_failure": 0,
+      "probe_failure": 0,
+      "missing_config": 0,
+      "scheduling_failure": 0,
+      "insufficient_evidence": 0,
+      "invalid": 2
+    },
+    "scheduling_failure": {
+      "container_crash": 0,
+      "oom_killed": 0,
+      "image_pull_failure": 0,
+      "probe_failure": 0,
+      "missing_config": 0,
+      "scheduling_failure": 8,
+      "insufficient_evidence": 0,
+      "invalid": 0
+    },
+    "insufficient_evidence": {
+      "container_crash": 1,
+      "oom_killed": 0,
+      "image_pull_failure": 1,
+      "probe_failure": 0,
+      "missing_config": 0,
+      "scheduling_failure": 0,
+      "insufficient_evidence": 0,
+      "invalid": 0
+    }
+  },
+  "json_parse_success_rate": 0.9,
+  "strict_schema_success_rate": 0.9,
+  "valid_outputs": 45,
+  "valid_output_rate": 0.9,
+  "reference_success_rate": 0.9,
+  "abstentions": 0,
+  "abstention_rate": 0.0,
+  "answerable_abstentions": 0,
+  "ambiguous_support": 2,
+  "correct_abstention_rate": 0.0,
+  "abstention_groups": {
+    "missing_diagnostics": {
+      "support": 1,
+      "correct_abstentions": 0,
+      "correct_abstention_rate": 0.0
+    },
+    "target_ambiguity": {
+      "support": 1,
+      "correct_abstentions": 0,
+      "correct_abstention_rate": 0.0
+    }
+  },
+  "automatic_flagged_predictions": 0,
+  "automatic_flags_by_code": {},
+  "reviewed_hallucination_rate": null,
+  "metric_policy": "Invalid or missing outputs are incorrect. Reference failures invalidate classification even if JSON/schema pass. Macro-F1 averages six classes, including zero-support classes as zero; abstentions on answerable cases are false negatives and class predictions on abstention cases are false positives. Automatic flags are incomplete review aids, not reviewed hallucination measurements. Variants are not independent scenarios.",
+  "dataset_sha256": "80ee3bf10203c44a11f8afdb61c226d18f47cd30e9e1289b3404b02d97084c86",
+  "records_sha256": "3483051dcaebb69b4cc05f47acad9c41c21fe5bf9e7a5d0b601b7404e34865d8",
+  "evaluator_sha256": "7fc01d86e728497676d6f6341a8d82736361307d24431abbbddbccfd51a9bcd2",
+  "selector_sha256": "455e661f8bb034a21f4e9f634faa8061230e159cd1bd8925a9af3314c2d52a0a",
+  "run": {
+    "run_id": "qwen-70d244cc86cc-80ee3bf10203-4e7350234cdf",
+    "backend_id": "transformers/Qwen/Qwen3-1.7B",
+    "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+    "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+    "prompt_version": "zero-shot-v1",
+    "decoding_settings": {
+      "model_id": "Qwen/Qwen3-1.7B",
+      "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+      "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+      "dtype": "bfloat16",
+      "device": "cuda",
+      "attention": "sdpa",
+      "threads": 4,
+      "seed": 42,
+      "max_input_tokens": 16384,
+      "max_new_tokens": 512,
+      "do_sample": false,
+      "enable_thinking": false,
+      "prompt_version": "zero-shot-v1"
+    },
+    "seed": 42,
+    "dataset_sha256": "80ee3bf10203c44a11f8afdb61c226d18f47cd30e9e1289b3404b02d97084c86",
+    "environment": {
+      "python": "3.12.13",
+      "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+      "cpu": "x86_64",
+      "torch": "2.7.1+cu128",
+      "transformers": "4.57.6",
+      "cuda_runtime": "12.8",
+      "threads": "4",
+      "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+      "precision": "bfloat16",
+      "attention": "sdpa",
+      "split": "test",
+      "prompt_sha256": "4e7350234cdff042a02020c4e55779a3f1b5224d8f4b0b51ec5fe81ed60872cb",
+      "inference_source_sha256": "7e29c1539a570c89c642044b6bf1fb8bcfa7cae82ef3e06ba57668ae5df86ad7"
+    }
+  },
+  "model_load_seconds": 5.383565271000407,
+  "inference_errors": 0
+}

@@ -1,0 +1,129 @@
+{
+  "backend": "model",
+  "mode": "cold",
+  "run": {
+    "run_id": "qwen-70d244cc86cc-cd884b0af54c-4e7350234cdf",
+    "backend_id": "transformers/Qwen/Qwen3-1.7B",
+    "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+    "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+    "prompt_version": "zero-shot-v1",
+    "decoding_settings": {
+      "model_id": "Qwen/Qwen3-1.7B",
+      "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+      "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+      "dtype": "bfloat16",
+      "device": "cuda",
+      "attention": "sdpa",
+      "threads": 4,
+      "seed": 42,
+      "max_input_tokens": 16384,
+      "max_new_tokens": 512,
+      "do_sample": false,
+      "enable_thinking": false,
+      "prompt_version": "zero-shot-v1"
+    },
+    "seed": 42,
+    "dataset_sha256": "cd884b0af54cb97f66c34838192e4502e8aef597a532b5b9723ad5dbc7a03bbd",
+    "environment": {
+      "python": "3.12.13",
+      "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+      "cpu": "x86_64",
+      "torch": "2.7.1+cu128",
+      "transformers": "4.57.6",
+      "cuda_runtime": "12.8",
+      "threads": "4",
+      "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+      "precision": "bfloat16",
+      "attention": "sdpa",
+      "split": "benchmark-cold",
+      "prompt_sha256": "4e7350234cdff042a02020c4e55779a3f1b5224d8f4b0b51ec5fe81ed60872cb",
+      "inference_source_sha256": "7e29c1539a570c89c642044b6bf1fb8bcfa7cae82ef3e06ba57668ae5df86ad7"
+    }
+  },
+  "warmup": null,
+  "results": [
+    {
+      "repetition": 1,
+      "record": {
+        "incident_id": "case-1c92f568302ee68d87cb7945",
+        "run": {
+          "run_id": "qwen-70d244cc86cc-cd884b0af54c-4e7350234cdf",
+          "backend_id": "transformers/Qwen/Qwen3-1.7B",
+          "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "prompt_version": "zero-shot-v1",
+          "decoding_settings": {
+            "model_id": "Qwen/Qwen3-1.7B",
+            "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "dtype": "bfloat16",
+            "device": "cuda",
+            "attention": "sdpa",
+            "threads": 4,
+            "seed": 42,
+            "max_input_tokens": 16384,
+            "max_new_tokens": 512,
+            "do_sample": false,
+            "enable_thinking": false,
+            "prompt_version": "zero-shot-v1"
+          },
+          "seed": 42,
+          "dataset_sha256": "cd884b0af54cb97f66c34838192e4502e8aef597a532b5b9723ad5dbc7a03bbd",
+          "environment": {
+            "python": "3.12.13",
+            "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+            "cpu": "x86_64",
+            "torch": "2.7.1+cu128",
+            "transformers": "4.57.6",
+            "cuda_runtime": "12.8",
+            "threads": "4",
+            "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+            "precision": "bfloat16",
+            "attention": "sdpa",
+            "split": "benchmark-cold",
+            "prompt_sha256": "4e7350234cdff042a02020c4e55779a3f1b5224d8f4b0b51ec5fe81ed60872cb",
+            "inference_source_sha256": "7e29c1539a570c89c642044b6bf1fb8bcfa7cae82ef3e06ba57668ae5df86ad7"
+          }
+        },
+        "raw_response": "{\n  \"incident_id\": \"case-1c92f568302ee68d87cb7945\",\n  \"category\": \"container_crash\",\n  \"root_cause\": \"Liveness probe failed: context deadline exceeded (Client.Timeout exceeded while awaiting headers). The probe failed repeatedly, leading to the container being marked as unhealthy and restarted.\",\n  \"evidence_ids\": [\"event-1\", \"event-2\", \"event-3\", \"event-kill\", \"termination-1\", \"status-1\"],\n  \"explanation\": \"The liveness probe failed three times, causing the container to be marked as unhealthy and restarted. The probe failed due to a context deadline exceeded error, which indicates that the probe was unable to complete its request within the allowed time frame. This led to the container being terminated and restarted, resulting in a CrashLoopBackOff state.\",\n  \"recommended_checks\": [\n    \"Check the liveness probe configuration to ensure it is correctly set up and configured for the target service.\",\n    \"Verify the network connectivity and availability of the target service (e.g., the HTTP endpoint at port 8080).\",\n    \"Check the container logs for more detailed error messages related to the liveness probe failure.\"\n  ],\n  \"uncertain\": false\n}",
+        "prediction": {
+          "incident_id": "case-1c92f568302ee68d87cb7945",
+          "category": "container_crash",
+          "root_cause": "Liveness probe failed: context deadline exceeded (Client.Timeout exceeded while awaiting headers). The probe failed repeatedly, leading to the container being marked as unhealthy and restarted.",
+          "evidence_ids": [
+            "event-1",
+            "event-2",
+            "event-3",
+            "event-kill",
+            "termination-1",
+            "status-1"
+          ],
+          "explanation": "The liveness probe failed three times, causing the container to be marked as unhealthy and restarted. The probe failed due to a context deadline exceeded error, which indicates that the probe was unable to complete its request within the allowed time frame. This led to the container being terminated and restarted, resulting in a CrashLoopBackOff state.",
+          "recommended_checks": [
+            "Check the liveness probe configuration to ensure it is correctly set up and configured for the target service.",
+            "Verify the network connectivity and availability of the target service (e.g., the HTTP endpoint at port 8080).",
+            "Check the container logs for more detailed error messages related to the liveness probe failure."
+          ],
+          "uncertain": false
+        },
+        "parse_errors": [],
+        "schema_errors": [],
+        "reference_errors": [],
+        "elapsed_seconds": 14.3883948900002
+      },
+      "measurement": {
+        "incident_id": "case-1c92f568302ee68d87cb7945",
+        "input_tokens": 1641,
+        "output_tokens": 274,
+        "elapsed_seconds": 20.011907131000044,
+        "generated_tokens_per_second": 13.69184846833274,
+        "peak_rss_bytes": 4328050688,
+        "process_lifetime_peak_rss_bytes": 4328050688,
+        "gpu_peak_allocated_bytes": 3734770176,
+        "gpu_peak_reserved_bytes": 3802136576,
+        "inference_error": null,
+        "prediction_elapsed_seconds": 14.3883948900002
+      }
+    }
+  ]
+}

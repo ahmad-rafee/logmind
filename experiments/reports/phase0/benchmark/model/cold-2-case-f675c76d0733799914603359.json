@@ -1,0 +1,124 @@
+{
+  "backend": "model",
+  "mode": "cold",
+  "run": {
+    "run_id": "qwen-70d244cc86cc-cd884b0af54c-4e7350234cdf",
+    "backend_id": "transformers/Qwen/Qwen3-1.7B",
+    "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+    "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+    "prompt_version": "zero-shot-v1",
+    "decoding_settings": {
+      "model_id": "Qwen/Qwen3-1.7B",
+      "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+      "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+      "dtype": "bfloat16",
+      "device": "cuda",
+      "attention": "sdpa",
+      "threads": 4,
+      "seed": 42,
+      "max_input_tokens": 16384,
+      "max_new_tokens": 512,
+      "do_sample": false,
+      "enable_thinking": false,
+      "prompt_version": "zero-shot-v1"
+    },
+    "seed": 42,
+    "dataset_sha256": "cd884b0af54cb97f66c34838192e4502e8aef597a532b5b9723ad5dbc7a03bbd",
+    "environment": {
+      "python": "3.12.13",
+      "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+      "cpu": "x86_64",
+      "torch": "2.7.1+cu128",
+      "transformers": "4.57.6",
+      "cuda_runtime": "12.8",
+      "threads": "4",
+      "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+      "precision": "bfloat16",
+      "attention": "sdpa",
+      "split": "benchmark-cold",
+      "prompt_sha256": "4e7350234cdff042a02020c4e55779a3f1b5224d8f4b0b51ec5fe81ed60872cb",
+      "inference_source_sha256": "7e29c1539a570c89c642044b6bf1fb8bcfa7cae82ef3e06ba57668ae5df86ad7"
+    }
+  },
+  "warmup": null,
+  "results": [
+    {
+      "repetition": 1,
+      "record": {
+        "incident_id": "case-f675c76d0733799914603359",
+        "run": {
+          "run_id": "qwen-70d244cc86cc-cd884b0af54c-4e7350234cdf",
+          "backend_id": "transformers/Qwen/Qwen3-1.7B",
+          "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "prompt_version": "zero-shot-v1",
+          "decoding_settings": {
+            "model_id": "Qwen/Qwen3-1.7B",
+            "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "dtype": "bfloat16",
+            "device": "cuda",
+            "attention": "sdpa",
+            "threads": 4,
+            "seed": 42,
+            "max_input_tokens": 16384,
+            "max_new_tokens": 512,
+            "do_sample": false,
+            "enable_thinking": false,
+            "prompt_version": "zero-shot-v1"
+          },
+          "seed": 42,
+          "dataset_sha256": "cd884b0af54cb97f66c34838192e4502e8aef597a532b5b9723ad5dbc7a03bbd",
+          "environment": {
+            "python": "3.12.13",
+            "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+            "cpu": "x86_64",
+            "torch": "2.7.1+cu128",
+            "transformers": "4.57.6",
+            "cuda_runtime": "12.8",
+            "threads": "4",
+            "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+            "precision": "bfloat16",
+            "attention": "sdpa",
+            "split": "benchmark-cold",
+            "prompt_sha256": "4e7350234cdff042a02020c4e55779a3f1b5224d8f4b0b51ec5fe81ed60872cb",
+            "inference_source_sha256": "7e29c1539a570c89c642044b6bf1fb8bcfa7cae82ef3e06ba57668ae5df86ad7"
+          }
+        },
+        "raw_response": "{\n  \"incident_id\": \"case-f675c76d0733799914603359\",\n  \"category\": \"image_pull_failure\",\n  \"root_cause\": \"The pod attempted to pull the image `registry.example.invalid/demo/image-worker:release-9` for container `api` on node `demo-node-b`, but the image was not found on the available platform `linux/amd64` (as specified in the supplied registry index snapshot). The event shows a warning that the platform `linux/arm64` was not found in the manifest.\",\n  \"evidence_ids\": [\"metadata-3\", \"event-2\"],\n  \"explanation\": \"The incident is caused by a mismatch between the requested platform (`linux/arm64`) and the available platforms in the registry index snapshot (`linux/amd64`). The pod attempted to pull the image but failed due to the platform not being found, leading to the `ImagePullBackOff` warning and the pod remaining in a `Pending` state.\",\n  \"recommended_checks\": [\n    \"Verify the registry index snapshot to ensure it includes the correct platform for the target node.\",\n    \"Check the node's platform and image compatibility in the Kubernetes cluster.\"\n  ],\n  \"uncertain\": true\n}",
+        "prediction": {
+          "incident_id": "case-f675c76d0733799914603359",
+          "category": "image_pull_failure",
+          "root_cause": "The pod attempted to pull the image `registry.example.invalid/demo/image-worker:release-9` for container `api` on node `demo-node-b`, but the image was not found on the available platform `linux/amd64` (as specified in the supplied registry index snapshot). The event shows a warning that the platform `linux/arm64` was not found in the manifest.",
+          "evidence_ids": [
+            "metadata-3",
+            "event-2"
+          ],
+          "explanation": "The incident is caused by a mismatch between the requested platform (`linux/arm64`) and the available platforms in the registry index snapshot (`linux/amd64`). The pod attempted to pull the image but failed due to the platform not being found, leading to the `ImagePullBackOff` warning and the pod remaining in a `Pending` state.",
+          "recommended_checks": [
+            "Verify the registry index snapshot to ensure it includes the correct platform for the target node.",
+            "Check the node's platform and image compatibility in the Kubernetes cluster."
+          ],
+          "uncertain": true
+        },
+        "parse_errors": [],
+        "schema_errors": [],
+        "reference_errors": [],
+        "elapsed_seconds": 13.493843709002249
+      },
+      "measurement": {
+        "incident_id": "case-f675c76d0733799914603359",
+        "input_tokens": 1462,
+        "output_tokens": 272,
+        "elapsed_seconds": 18.92875929100046,
+        "generated_tokens_per_second": 14.369668704557958,
+        "peak_rss_bytes": 4328062976,
+        "process_lifetime_peak_rss_bytes": 4328062976,
+        "gpu_peak_allocated_bytes": 3706412032,
+        "gpu_peak_reserved_bytes": 3768582144,
+        "inference_error": null,
+        "prediction_elapsed_seconds": 13.493843709002249
+      }
+    }
+  ]
+}

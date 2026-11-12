@@ -1,0 +1,79 @@
+{
+  "package_source": "/tmp/logmind-phase0-reproduce-4myuf6e3/src/logmind/__init__.py",
+  "record": {
+    "incident_id": "case-1710bcf16c21797d8c0ab4e0",
+    "run": {
+      "run_id": "qwen-70d244cc86cc-05ec83ee5e99-4e7350234cdf",
+      "backend_id": "transformers/Qwen/Qwen3-1.7B",
+      "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+      "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+      "prompt_version": "zero-shot-v1",
+      "decoding_settings": {
+        "model_id": "Qwen/Qwen3-1.7B",
+        "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+        "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+        "dtype": "bfloat16",
+        "device": "cuda",
+        "attention": "sdpa",
+        "threads": 4,
+        "seed": 42,
+        "max_input_tokens": 16384,
+        "max_new_tokens": 512,
+        "do_sample": false,
+        "enable_thinking": false,
+        "prompt_version": "zero-shot-v1"
+      },
+      "seed": 42,
+      "dataset_sha256": "05ec83ee5e99ea8edc1efb9fd3671ffc66f6dbc02ef9e38306b7574a4095e34c",
+      "environment": {
+        "python": "3.12.13",
+        "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+        "cpu": "x86_64",
+        "torch": "2.7.1+cu128",
+        "transformers": "4.57.6",
+        "cuda_runtime": "12.8",
+        "threads": "4",
+        "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+        "precision": "bfloat16",
+        "attention": "sdpa",
+        "split": "validation-reproduction-smoke",
+        "prompt_sha256": "4e7350234cdff042a02020c4e55779a3f1b5224d8f4b0b51ec5fe81ed60872cb",
+        "inference_source_sha256": "7e29c1539a570c89c642044b6bf1fb8bcfa7cae82ef3e06ba57668ae5df86ad7"
+      }
+    },
+    "raw_response": "{\n  \"incident_id\": \"case-1710bcf16c21797d8c0ab4e0\",\n  \"category\": \"scheduling_failure\",\n  \"root_cause\": \"The pod 'cache-api-v4s7n' was not scheduled due to node affinity/selector conflicts. The pod's node affinity/selector did not match any available nodes, leading to the pod being marked as unschedulable.\",\n  \"evidence_ids\": [\"metadata-1\", \"metadata-2\", \"event-1\", \"status-1\"],\n  \"explanation\": \"The pod was not scheduled because the node affinity/selector constraints did not match any available nodes. The pod's node selector required 'disk' to be 'nvme', but the available nodes had 'disk' set to 'ssd' or 'hdd'. This caused the pod to be unschedulable, resulting in the 'Unschedulable' reason in the pod status.\",\n  \"recommended_checks\": [\n    \"Verify that the node affinity/selector constraints are correctly set and match available nodes.\",\n    \"Check if the pod's node name is explicitly set to a specific node.\"\n  ],\n  \"uncertain\": true\n}",
+    "prediction": {
+      "incident_id": "case-1710bcf16c21797d8c0ab4e0",
+      "category": "scheduling_failure",
+      "root_cause": "The pod 'cache-api-v4s7n' was not scheduled due to node affinity/selector conflicts. The pod's node affinity/selector did not match any available nodes, leading to the pod being marked as unschedulable.",
+      "evidence_ids": [
+        "metadata-1",
+        "metadata-2",
+        "event-1",
+        "status-1"
+      ],
+      "explanation": "The pod was not scheduled because the node affinity/selector constraints did not match any available nodes. The pod's node selector required 'disk' to be 'nvme', but the available nodes had 'disk' set to 'ssd' or 'hdd'. This caused the pod to be unschedulable, resulting in the 'Unschedulable' reason in the pod status.",
+      "recommended_checks": [
+        "Verify that the node affinity/selector constraints are correctly set and match available nodes.",
+        "Check if the pod's node name is explicitly set to a specific node."
+      ],
+      "uncertain": true
+    },
+    "parse_errors": [],
+    "schema_errors": [],
+    "reference_errors": [],
+    "elapsed_seconds": 13.456065586000477
+  },
+  "telemetry": {
+    "incident_id": "case-1710bcf16c21797d8c0ab4e0",
+    "input_tokens": 1302,
+    "output_tokens": 259,
+    "elapsed_seconds": 13.456065586000477,
+    "generated_tokens_per_second": 19.247825327892304,
+    "peak_rss_bytes": 1780387840,
+    "process_lifetime_peak_rss_bytes": 4345405440,
+    "gpu_peak_allocated_bytes": 3678533632,
+    "gpu_peak_reserved_bytes": 3718250496,
+    "inference_error": null
+  }
+}

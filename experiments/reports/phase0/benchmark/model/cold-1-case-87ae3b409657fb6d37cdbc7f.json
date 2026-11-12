@@ -1,0 +1,125 @@
+{
+  "backend": "model",
+  "mode": "cold",
+  "run": {
+    "run_id": "qwen-70d244cc86cc-cd884b0af54c-4e7350234cdf",
+    "backend_id": "transformers/Qwen/Qwen3-1.7B",
+    "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+    "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+    "prompt_version": "zero-shot-v1",
+    "decoding_settings": {
+      "model_id": "Qwen/Qwen3-1.7B",
+      "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+      "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+      "dtype": "bfloat16",
+      "device": "cuda",
+      "attention": "sdpa",
+      "threads": 4,
+      "seed": 42,
+      "max_input_tokens": 16384,
+      "max_new_tokens": 512,
+      "do_sample": false,
+      "enable_thinking": false,
+      "prompt_version": "zero-shot-v1"
+    },
+    "seed": 42,
+    "dataset_sha256": "cd884b0af54cb97f66c34838192e4502e8aef597a532b5b9723ad5dbc7a03bbd",
+    "environment": {
+      "python": "3.12.13",
+      "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+      "cpu": "x86_64",
+      "torch": "2.7.1+cu128",
+      "transformers": "4.57.6",
+      "cuda_runtime": "12.8",
+      "threads": "4",
+      "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+      "precision": "bfloat16",
+      "attention": "sdpa",
+      "split": "benchmark-cold",
+      "prompt_sha256": "4e7350234cdff042a02020c4e55779a3f1b5224d8f4b0b51ec5fe81ed60872cb",
+      "inference_source_sha256": "7e29c1539a570c89c642044b6bf1fb8bcfa7cae82ef3e06ba57668ae5df86ad7"
+    }
+  },
+  "warmup": null,
+  "results": [
+    {
+      "repetition": 1,
+      "record": {
+        "incident_id": "case-87ae3b409657fb6d37cdbc7f",
+        "run": {
+          "run_id": "qwen-70d244cc86cc-cd884b0af54c-4e7350234cdf",
+          "backend_id": "transformers/Qwen/Qwen3-1.7B",
+          "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "prompt_version": "zero-shot-v1",
+          "decoding_settings": {
+            "model_id": "Qwen/Qwen3-1.7B",
+            "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "dtype": "bfloat16",
+            "device": "cuda",
+            "attention": "sdpa",
+            "threads": 4,
+            "seed": 42,
+            "max_input_tokens": 16384,
+            "max_new_tokens": 512,
+            "do_sample": false,
+            "enable_thinking": false,
+            "prompt_version": "zero-shot-v1"
+          },
+          "seed": 42,
+          "dataset_sha256": "cd884b0af54cb97f66c34838192e4502e8aef597a532b5b9723ad5dbc7a03bbd",
+          "environment": {
+            "python": "3.12.13",
+            "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+            "cpu": "x86_64",
+            "torch": "2.7.1+cu128",
+            "transformers": "4.57.6",
+            "cuda_runtime": "12.8",
+            "threads": "4",
+            "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+            "precision": "bfloat16",
+            "attention": "sdpa",
+            "split": "benchmark-cold",
+            "prompt_sha256": "4e7350234cdff042a02020c4e55779a3f1b5224d8f4b0b51ec5fe81ed60872cb",
+            "inference_source_sha256": "7e29c1539a570c89c642044b6bf1fb8bcfa7cae82ef3e06ba57668ae5df86ad7"
+          }
+        },
+        "raw_response": "{\n  \"incident_id\": \"case-87ae3b409657fb6d37cdbc7f\",\n  \"category\": \"scheduling_failure\",\n  \"root_cause\": \"The pod vision-worker-p1j8w could not be scheduled due to insufficient NVIDIA GPU resources on the nodes, as indicated by the event '0/2 nodes are available: 2 Insufficient nvidia.com/gpu.'\",\n  \"evidence_ids\": [\"event-1\", \"status-1\"],\n  \"explanation\": \"The pod was in a Pending state with the reason 'Unschedulable' because the nodes lacked the required NVIDIA GPU resources, preventing the pod from being scheduled. The event explicitly states that two nodes are insufficient for the GPU requirement, and the status confirms the pod was not scheduled.\",\n  \"recommended_checks\": [\n    \"Verify the GPU requirements and available resources on the nodes.\",\n    \"Check if the GPU resource claim in the pod specification is correctly set.\",\n    \"Ensure that the NVIDIA GPU driver is properly installed and configured on the nodes.\"\n  ],\n  \"uncertain\": false\n}",
+        "prediction": {
+          "incident_id": "case-87ae3b409657fb6d37cdbc7f",
+          "category": "scheduling_failure",
+          "root_cause": "The pod vision-worker-p1j8w could not be scheduled due to insufficient NVIDIA GPU resources on the nodes, as indicated by the event '0/2 nodes are available: 2 Insufficient nvidia.com/gpu.'",
+          "evidence_ids": [
+            "event-1",
+            "status-1"
+          ],
+          "explanation": "The pod was in a Pending state with the reason 'Unschedulable' because the nodes lacked the required NVIDIA GPU resources, preventing the pod from being scheduled. The event explicitly states that two nodes are insufficient for the GPU requirement, and the status confirms the pod was not scheduled.",
+          "recommended_checks": [
+            "Verify the GPU requirements and available resources on the nodes.",
+            "Check if the GPU resource claim in the pod specification is correctly set.",
+            "Ensure that the NVIDIA GPU driver is properly installed and configured on the nodes."
+          ],
+          "uncertain": false
+        },
+        "parse_errors": [],
+        "schema_errors": [],
+        "reference_errors": [],
+        "elapsed_seconds": 15.659424191999278
+      },
+      "measurement": {
+        "incident_id": "case-87ae3b409657fb6d37cdbc7f",
+        "input_tokens": 1275,
+        "output_tokens": 235,
+        "elapsed_seconds": 21.056698434000282,
+        "generated_tokens_per_second": 11.160344093665945,
+        "peak_rss_bytes": 4327890944,
+        "process_lifetime_peak_rss_bytes": 4327890944,
+        "gpu_peak_allocated_bytes": 3665588736,
+        "gpu_peak_reserved_bytes": 3718250496,
+        "inference_error": null,
+        "prediction_elapsed_seconds": 15.659424191999278
+      }
+    }
+  ]
+}

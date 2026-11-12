@@ -1,0 +1,150 @@
+{
+  "dataset_version": "v1",
+  "frozen_manifest_sha256": "c60c7ebcdbcee390c571627dc1e2b444eb380e6197f64304eb42bc3d17b04d87",
+  "subset_sha256": "cd884b0af54cb97f66c34838192e4502e8aef597a532b5b9723ad5dbc7a03bbd",
+  "incident_ids": [
+    "case-bf509e49b0c71bfeeea51950",
+    "case-f675c76d0733799914603359",
+    "case-b98870b3ffb39c94c2b49ba2",
+    "case-b9292bb1efe84e0e4cab3d61",
+    "case-8377ef5ecc2eead6dc52cfdd",
+    "case-1c92f568302ee68d87cb7945",
+    "case-87ae3b409657fb6d37cdbc7f"
+  ],
+  "repetitions": 3,
+  "policy": "One hash-selected held-out incident per category, seed 42. Cold: new Python process/model per incident/repetition, including imports/load/first prediction; OS file cache is not flushed. Warm: one loaded process per backend, one discarded warm-up, then three complete repetitions. End-to-end prompt assembly/inference/parsing, including instrumentation. RSS sampled every 10ms plus process-lifetime peak for cold; CUDA peaks from PyTorch. p95 uses linear interpolation. Rules have no tokenizer/output-token throughput.",
+  "backends": {
+    "rules": {
+      "run": {
+        "run_id": "rules-benchmark",
+        "backend_id": "rules",
+        "revision": "455e661f8bb034a21f4e9f634faa8061230e159cd1bd8925a9af3314c2d52a0a",
+        "tokenizer_revision": null,
+        "prompt_version": "rules-v1-no-prompt",
+        "decoding_settings": {},
+        "seed": 42,
+        "dataset_sha256": "cd884b0af54cb97f66c34838192e4502e8aef597a532b5b9723ad5dbc7a03bbd",
+        "environment": {
+          "python": "3.12.13"
+        }
+      },
+      "cold": {
+        "n_measurements": 21,
+        "median_seconds": 0.1252677800002857,
+        "p95_seconds": 0.1354308019981545,
+        "peak_rss_bytes": 41742336,
+        "inference_errors": 0,
+        "valid_outputs": 21,
+        "gpu_peak_allocated_bytes": null,
+        "gpu_peak_reserved_bytes": null,
+        "input_tokens": null,
+        "output_tokens": null,
+        "generated_tokens_per_second": null
+      },
+      "warm": {
+        "n_measurements": 21,
+        "median_seconds": 0.00029032099700998515,
+        "p95_seconds": 0.00037506800072151236,
+        "peak_rss_bytes": 33738752,
+        "inference_errors": 0,
+        "valid_outputs": 21,
+        "gpu_peak_allocated_bytes": null,
+        "gpu_peak_reserved_bytes": null,
+        "input_tokens": null,
+        "output_tokens": null,
+        "generated_tokens_per_second": null
+      }
+    },
+    "model": {
+      "run": {
+        "run_id": "qwen-70d244cc86cc-cd884b0af54c-4e7350234cdf",
+        "backend_id": "transformers/Qwen/Qwen3-1.7B",
+        "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+        "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+        "prompt_version": "zero-shot-v1",
+        "decoding_settings": {
+          "model_id": "Qwen/Qwen3-1.7B",
+          "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "dtype": "bfloat16",
+          "device": "cuda",
+          "attention": "sdpa",
+          "threads": 4,
+          "seed": 42,
+          "max_input_tokens": 16384,
+          "max_new_tokens": 512,
+          "do_sample": false,
+          "enable_thinking": false,
+          "prompt_version": "zero-shot-v1"
+        },
+        "seed": 42,
+        "dataset_sha256": "cd884b0af54cb97f66c34838192e4502e8aef597a532b5b9723ad5dbc7a03bbd",
+        "environment": {
+          "python": "3.12.13",
+          "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+          "cpu": "x86_64",
+          "torch": "2.7.1+cu128",
+          "transformers": "4.57.6",
+          "cuda_runtime": "12.8",
+          "threads": "4",
+          "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+          "precision": "bfloat16",
+          "attention": "sdpa",
+          "split": "benchmark-warm",
+          "prompt_sha256": "4e7350234cdff042a02020c4e55779a3f1b5224d8f4b0b51ec5fe81ed60872cb",
+          "inference_source_sha256": "7e29c1539a570c89c642044b6bf1fb8bcfa7cae82ef3e06ba57668ae5df86ad7"
+        }
+      },
+      "cold": {
+        "n_measurements": 21,
+        "median_seconds": 19.00496319299782,
+        "p95_seconds": 23.188223691999156,
+        "peak_rss_bytes": 4328783872,
+        "inference_errors": 0,
+        "valid_outputs": 21,
+        "gpu_peak_allocated_bytes": 3767666176,
+        "gpu_peak_reserved_bytes": 3821010944,
+        "input_tokens": {
+          "median": 1275,
+          "min": 591,
+          "max": 1864
+        },
+        "output_tokens": {
+          "median": 245,
+          "min": 156,
+          "max": 300
+        },
+        "generated_tokens_per_second": {
+          "median": 13.073786311390313,
+          "min": 9.831250866189576,
+          "max": 14.982420650158819
+        }
+      },
+      "warm": {
+        "n_measurements": 21,
+        "median_seconds": 10.144098811997537,
+        "p95_seconds": 12.776017193998996,
+        "peak_rss_bytes": 1795796992,
+        "inference_errors": 0,
+        "valid_outputs": 21,
+        "gpu_peak_allocated_bytes": 3766519296,
+        "gpu_peak_reserved_bytes": 3862953984,
+        "input_tokens": {
+          "median": 1275,
+          "min": 591,
+          "max": 1864
+        },
+        "output_tokens": {
+          "median": 245,
+          "min": 156,
+          "max": 300
+        },
+        "generated_tokens_per_second": {
+          "median": 24.720608156614595,
+          "min": 19.176555281647445,
+          "max": 25.734308160830786
+        }
+      }
+    }
+  }
+}

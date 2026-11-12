@@ -1,0 +1,12 @@
+{
+  "python": "3.12.13",
+  "core_only_verified_before_model_setup": true,
+  "data_files_and_manifest_byte_equal": true,
+  "frozen_release_verified": true,
+  "rules_full_test_reproduced_accuracy": 1.0,
+  "captured_model_metrics_recomputed_accuracy": 0.5,
+  "captured_source_gpu_smoke_runtime_error": null,
+  "captured_source_gpu_smoke_input_tokens": 1302,
+  "captured_source_gpu_smoke_output_tokens": 259,
+  "captured_source_package_loaded_from_writable_copy": true
+}

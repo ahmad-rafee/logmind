@@ -1,0 +1,168 @@
+{
+  "n": 50,
+  "scenarios": 14,
+  "responses": 50,
+  "missing_outputs": 0,
+  "correct": 50,
+  "accuracy": 1.0,
+  "answerable_support": 48,
+  "answerable_accuracy": 1.0,
+  "macro_f1_six_classes": 1.0,
+  "per_class": {
+    "container_crash": {
+      "support": 8,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "oom_killed": {
+      "support": 8,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "image_pull_failure": {
+      "support": 8,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "probe_failure": {
+      "support": 8,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "missing_config": {
+      "support": 8,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "scheduling_failure": {
+      "support": 8,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    }
+  },
+  "confusion_matrix": {
+    "container_crash": {
+      "container_crash": 8,
+      "oom_killed": 0,
+      "image_pull_failure": 0,
+      "probe_failure": 0,
+      "missing_config": 0,
+      "scheduling_failure": 0,
+      "insufficient_evidence": 0,
+      "invalid": 0
+    },
+    "oom_killed": {
+      "container_crash": 0,
+      "oom_killed": 8,
+      "image_pull_failure": 0,
+      "probe_failure": 0,
+      "missing_config": 0,
+      "scheduling_failure": 0,
+      "insufficient_evidence": 0,
+      "invalid": 0
+    },
+    "image_pull_failure": {
+      "container_crash": 0,
+      "oom_killed": 0,
+      "image_pull_failure": 8,
+      "probe_failure": 0,
+      "missing_config": 0,
+      "scheduling_failure": 0,
+      "insufficient_evidence": 0,
+      "invalid": 0
+    },
+    "probe_failure": {
+      "container_crash": 0,
+      "oom_killed": 0,
+      "image_pull_failure": 0,
+      "probe_failure": 8,
+      "missing_config": 0,
+      "scheduling_failure": 0,
+      "insufficient_evidence": 0,
+      "invalid": 0
+    },
+    "missing_config": {
+      "container_crash": 0,
+      "oom_killed": 0,
+      "image_pull_failure": 0,
+      "probe_failure": 0,
+      "missing_config": 8,
+      "scheduling_failure": 0,
+      "insufficient_evidence": 0,
+      "invalid": 0
+    },
+    "scheduling_failure": {
+      "container_crash": 0,
+      "oom_killed": 0,
+      "image_pull_failure": 0,
+      "probe_failure": 0,
+      "missing_config": 0,
+      "scheduling_failure": 8,
+      "insufficient_evidence": 0,
+      "invalid": 0
+    },
+    "insufficient_evidence": {
+      "container_crash": 0,
+      "oom_killed": 0,
+      "image_pull_failure": 0,
+      "probe_failure": 0,
+      "missing_config": 0,
+      "scheduling_failure": 0,
+      "insufficient_evidence": 2,
+      "invalid": 0
+    }
+  },
+  "json_parse_success_rate": 1.0,
+  "strict_schema_success_rate": 1.0,
+  "valid_outputs": 50,
+  "valid_output_rate": 1.0,
+  "reference_success_rate": 1.0,
+  "abstentions": 2,
+  "abstention_rate": 0.04,
+  "answerable_abstentions": 0,
+  "ambiguous_support": 2,
+  "correct_abstention_rate": 1.0,
+  "abstention_groups": {
+    "missing_diagnostics": {
+      "support": 1,
+      "correct_abstentions": 1,
+      "correct_abstention_rate": 1.0
+    },
+    "target_ambiguity": {
+      "support": 1,
+      "correct_abstentions": 1,
+      "correct_abstention_rate": 1.0
+    }
+  },
+  "automatic_flagged_predictions": 0,
+  "automatic_flags_by_code": {},
+  "reviewed_hallucination_rate": null,
+  "metric_policy": "Invalid or missing outputs are incorrect. Reference failures invalidate classification even if JSON/schema pass. Macro-F1 averages six classes, including zero-support classes as zero; abstentions on answerable cases are false negatives and class predictions on abstention cases are false positives. Automatic flags are incomplete review aids, not reviewed hallucination measurements. Variants are not independent scenarios.",
+  "dataset_sha256": "80ee3bf10203c44a11f8afdb61c226d18f47cd30e9e1289b3404b02d97084c86",
+  "records_sha256": "9ac3e51f681bb193005fc9de74561033a27a1eac35b338c5843fcf64bcf78a96",
+  "evaluator_sha256": "7fc01d86e728497676d6f6341a8d82736361307d24431abbbddbccfd51a9bcd2",
+  "selector_sha256": "455e661f8bb034a21f4e9f634faa8061230e159cd1bd8925a9af3314c2d52a0a",
+  "run": {
+    "run_id": "rules-455e661f8bb0-80ee3bf10203",
+    "backend_id": "rules",
+    "revision": "455e661f8bb034a21f4e9f634faa8061230e159cd1bd8925a9af3314c2d52a0a",
+    "tokenizer_revision": null,
+    "prompt_version": "rules-v1-no-prompt",
+    "decoding_settings": {},
+    "seed": 0,
+    "dataset_sha256": "80ee3bf10203c44a11f8afdb61c226d18f47cd30e9e1289b3404b02d97084c86",
+    "environment": {
+      "python": "3.12.13",
+      "logmind": "0.1.0",
+      "dataset_version": "v1",
+      "split": "test",
+      "frozen_manifest_sha256": "c60c7ebcdbcee390c571627dc1e2b444eb380e6197f64304eb42bc3d17b04d87"
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "backend": "rules",
+  "mode": "cold",
+  "run": {
+    "run_id": "rules-benchmark",
+    "backend_id": "rules",
+    "revision": "455e661f8bb034a21f4e9f634faa8061230e159cd1bd8925a9af3314c2d52a0a",
+    "tokenizer_revision": null,
+    "prompt_version": "rules-v1-no-prompt",
+    "decoding_settings": {},
+    "seed": 42,
+    "dataset_sha256": "cd884b0af54cb97f66c34838192e4502e8aef597a532b5b9723ad5dbc7a03bbd",
+    "environment": {
+      "python": "3.12.13"
+    }
+  },
+  "warmup": null,
+  "results": [
+    {
+      "repetition": 1,
+      "record": {
+        "incident_id": "case-b98870b3ffb39c94c2b49ba2",
+        "run": {
+          "run_id": "rules-benchmark",
+          "backend_id": "rules",
+          "revision": "455e661f8bb034a21f4e9f634faa8061230e159cd1bd8925a9af3314c2d52a0a",
+          "tokenizer_revision": null,
+          "prompt_version": "rules-v1-no-prompt",
+          "decoding_settings": {},
+          "seed": 42,
+          "dataset_sha256": "cd884b0af54cb97f66c34838192e4502e8aef597a532b5b9723ad5dbc7a03bbd",
+          "environment": {
+            "python": "3.12.13"
+          }
+        },
+        "raw_response": "{\"incident_id\":\"case-b98870b3ffb39c94c2b49ba2\",\"category\":\"insufficient_evidence\",\"root_cause\":\"The supplied observations do not establish one unambiguous primary cause for a selected container attempt.\",\"evidence_ids\":[\"event-1\",\"event-2\",\"metadata-1\"],\"explanation\":\"Supplied observations: uploader: Failed to pull image registry.example.invalid/demo/uploader:release-1: 401 Unauthorized: authentication required. | metrics-sidecar: Readiness probe failed: HTTP probe failed with statuscode: 503. | Pod snapshot contains containers uploader and metrics-sidecar; the incident request does not select a target container.\",\"recommended_checks\":[\"Inspect missing diagnostics and clarify the target container/attempt before assigning a primary cause.\"],\"uncertain\":true}",
+        "prediction": {
+          "incident_id": "case-b98870b3ffb39c94c2b49ba2",
+          "category": "insufficient_evidence",
+          "root_cause": "The supplied observations do not establish one unambiguous primary cause for a selected container attempt.",
+          "evidence_ids": [
+            "event-1",
+            "event-2",
+            "metadata-1"
+          ],
+          "explanation": "Supplied observations: uploader: Failed to pull image registry.example.invalid/demo/uploader:release-1: 401 Unauthorized: authentication required. | metrics-sidecar: Readiness probe failed: HTTP probe failed with statuscode: 503. | Pod snapshot contains containers uploader and metrics-sidecar; the incident request does not select a target container.",
+          "recommended_checks": [
+            "Inspect missing diagnostics and clarify the target container/attempt before assigning a primary cause."
+          ],
+          "uncertain": true
+        },
+        "parse_errors": [],
+        "schema_errors": [],
+        "reference_errors": [],
+        "elapsed_seconds": 0.010984583997924346
+      },
+      "measurement": {
+        "incident_id": "case-b98870b3ffb39c94c2b49ba2",
+        "input_tokens": null,
+        "output_tokens": null,
+        "elapsed_seconds": 0.13069359300061478,
+        "generated_tokens_per_second": null,
+        "peak_rss_bytes": 41742336,
+        "process_lifetime_peak_rss_bytes": 41742336,
+        "gpu_peak_allocated_bytes": null,
+        "gpu_peak_reserved_bytes": null,
+        "inference_error": null,
+        "prediction_elapsed_seconds": 0.010984583997924346
+      }
+    }
+  ]
+}

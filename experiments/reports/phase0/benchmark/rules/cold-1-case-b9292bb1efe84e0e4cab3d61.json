@@ -1,0 +1,70 @@
+{
+  "backend": "rules",
+  "mode": "cold",
+  "run": {
+    "run_id": "rules-benchmark",
+    "backend_id": "rules",
+    "revision": "455e661f8bb034a21f4e9f634faa8061230e159cd1bd8925a9af3314c2d52a0a",
+    "tokenizer_revision": null,
+    "prompt_version": "rules-v1-no-prompt",
+    "decoding_settings": {},
+    "seed": 42,
+    "dataset_sha256": "cd884b0af54cb97f66c34838192e4502e8aef597a532b5b9723ad5dbc7a03bbd",
+    "environment": {
+      "python": "3.12.13"
+    }
+  },
+  "warmup": null,
+  "results": [
+    {
+      "repetition": 1,
+      "record": {
+        "incident_id": "case-b9292bb1efe84e0e4cab3d61",
+        "run": {
+          "run_id": "rules-benchmark",
+          "backend_id": "rules",
+          "revision": "455e661f8bb034a21f4e9f634faa8061230e159cd1bd8925a9af3314c2d52a0a",
+          "tokenizer_revision": null,
+          "prompt_version": "rules-v1-no-prompt",
+          "decoding_settings": {},
+          "seed": 42,
+          "dataset_sha256": "cd884b0af54cb97f66c34838192e4502e8aef597a532b5b9723ad5dbc7a03bbd",
+          "environment": {
+            "python": "3.12.13"
+          }
+        },
+        "raw_response": "{\"incident_id\":\"case-b9292bb1efe84e0e4cab3d61\",\"category\":\"missing_config\",\"root_cause\":\"A required workload configuration object or key is unavailable, as reported by the configuration event.\",\"evidence_ids\":[\"event-1\"],\"explanation\":\"Supplied observations: Error: secret \\\"app-auth-v1\\\" not found.\",\"recommended_checks\":[\"Inspect workload configuration references, namespaces, and required keys without exposing Secret values or editing resources.\"],\"uncertain\":false}",
+        "prediction": {
+          "incident_id": "case-b9292bb1efe84e0e4cab3d61",
+          "category": "missing_config",
+          "root_cause": "A required workload configuration object or key is unavailable, as reported by the configuration event.",
+          "evidence_ids": [
+            "event-1"
+          ],
+          "explanation": "Supplied observations: Error: secret \"app-auth-v1\" not found.",
+          "recommended_checks": [
+            "Inspect workload configuration references, namespaces, and required keys without exposing Secret values or editing resources."
+          ],
+          "uncertain": false
+        },
+        "parse_errors": [],
+        "schema_errors": [],
+        "reference_errors": [],
+        "elapsed_seconds": 0.010044056001788704
+      },
+      "measurement": {
+        "incident_id": "case-b9292bb1efe84e0e4cab3d61",
+        "input_tokens": null,
+        "output_tokens": null,
+        "elapsed_seconds": 0.12249291099942639,
+        "generated_tokens_per_second": null,
+        "peak_rss_bytes": 41742336,
+        "process_lifetime_peak_rss_bytes": 41742336,
+        "gpu_peak_allocated_bytes": null,
+        "gpu_peak_reserved_bytes": null,
+        "inference_error": null,
+        "prediction_elapsed_seconds": 0.010044056001788704
+      }
+    }
+  ]
+}

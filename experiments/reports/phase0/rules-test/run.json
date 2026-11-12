@@ -1,0 +1,17 @@
+{
+  "run_id": "rules-455e661f8bb0-80ee3bf10203",
+  "backend_id": "rules",
+  "revision": "455e661f8bb034a21f4e9f634faa8061230e159cd1bd8925a9af3314c2d52a0a",
+  "tokenizer_revision": null,
+  "prompt_version": "rules-v1-no-prompt",
+  "decoding_settings": {},
+  "seed": 0,
+  "dataset_sha256": "80ee3bf10203c44a11f8afdb61c226d18f47cd30e9e1289b3404b02d97084c86",
+  "environment": {
+    "python": "3.12.13",
+    "logmind": "0.1.0",
+    "dataset_version": "v1",
+    "split": "test",
+    "frozen_manifest_sha256": "c60c7ebcdbcee390c571627dc1e2b444eb380e6197f64304eb42bc3d17b04d87"
+  }
+}

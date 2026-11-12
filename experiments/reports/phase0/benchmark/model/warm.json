@@ -1,0 +1,1775 @@
+{
+  "backend": "model",
+  "mode": "warm",
+  "run": {
+    "run_id": "qwen-70d244cc86cc-cd884b0af54c-4e7350234cdf",
+    "backend_id": "transformers/Qwen/Qwen3-1.7B",
+    "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+    "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+    "prompt_version": "zero-shot-v1",
+    "decoding_settings": {
+      "model_id": "Qwen/Qwen3-1.7B",
+      "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+      "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+      "dtype": "bfloat16",
+      "device": "cuda",
+      "attention": "sdpa",
+      "threads": 4,
+      "seed": 42,
+      "max_input_tokens": 16384,
+      "max_new_tokens": 512,
+      "do_sample": false,
+      "enable_thinking": false,
+      "prompt_version": "zero-shot-v1"
+    },
+    "seed": 42,
+    "dataset_sha256": "cd884b0af54cb97f66c34838192e4502e8aef597a532b5b9723ad5dbc7a03bbd",
+    "environment": {
+      "python": "3.12.13",
+      "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+      "cpu": "x86_64",
+      "torch": "2.7.1+cu128",
+      "transformers": "4.57.6",
+      "cuda_runtime": "12.8",
+      "threads": "4",
+      "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+      "precision": "bfloat16",
+      "attention": "sdpa",
+      "split": "benchmark-warm",
+      "prompt_sha256": "4e7350234cdff042a02020c4e55779a3f1b5224d8f4b0b51ec5fe81ed60872cb",
+      "inference_source_sha256": "7e29c1539a570c89c642044b6bf1fb8bcfa7cae82ef3e06ba57668ae5df86ad7"
+    }
+  },
+  "warmup": {
+    "record": {
+      "incident_id": "case-bf509e49b0c71bfeeea51950",
+      "run": {
+        "run_id": "qwen-70d244cc86cc-cd884b0af54c-4e7350234cdf",
+        "backend_id": "transformers/Qwen/Qwen3-1.7B",
+        "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+        "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+        "prompt_version": "zero-shot-v1",
+        "decoding_settings": {
+          "model_id": "Qwen/Qwen3-1.7B",
+          "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "dtype": "bfloat16",
+          "device": "cuda",
+          "attention": "sdpa",
+          "threads": 4,
+          "seed": 42,
+          "max_input_tokens": 16384,
+          "max_new_tokens": 512,
+          "do_sample": false,
+          "enable_thinking": false,
+          "prompt_version": "zero-shot-v1"
+        },
+        "seed": 42,
+        "dataset_sha256": "cd884b0af54cb97f66c34838192e4502e8aef597a532b5b9723ad5dbc7a03bbd",
+        "environment": {
+          "python": "3.12.13",
+          "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+          "cpu": "x86_64",
+          "torch": "2.7.1+cu128",
+          "transformers": "4.57.6",
+          "cuda_runtime": "12.8",
+          "threads": "4",
+          "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+          "precision": "bfloat16",
+          "attention": "sdpa",
+          "split": "benchmark-warm",
+          "prompt_sha256": "4e7350234cdff042a02020c4e55779a3f1b5224d8f4b0b51ec5fe81ed60872cb",
+          "inference_source_sha256": "7e29c1539a570c89c642044b6bf1fb8bcfa7cae82ef3e06ba57668ae5df86ad7"
+        }
+      },
+      "raw_response": "{\n  \"incident_id\": \"case-bf509e49b0c71bfeeea51950\",\n  \"category\": \"container_crash\",\n  \"root_cause\": \"The container worker in pod receipt-worker-q3t9w is crashing due to a module not found error during startup, specifically the 'parcel_codec' module, which is not present in the expected environment.\",\n  \"evidence_ids\": [\"log-1\", \"log-2\"],\n  \"explanation\": \"The logs show that the container worker is crashing during startup due to a `ModuleNotFoundError` for `parcel_codec`, indicating a missing dependency or incorrect image configuration. The `CrashLoopBackOff` status suggests the container is repeatedly restarting, which is consistent with a container crash.\",\n  \"recommended_checks\": [\n    \"Verify that the image registry.example.invalid/demo/receipt-worker:release-4 contains the required dependencies.\",\n    \"Check the container's environment variables and configuration to ensure the correct dependencies are included.\",\n    \"Confirm that the image is correctly pulled and tagged for the target environment.\"\n  ],\n  \"uncertain\": true\n}",
+      "prediction": {
+        "incident_id": "case-bf509e49b0c71bfeeea51950",
+        "category": "container_crash",
+        "root_cause": "The container worker in pod receipt-worker-q3t9w is crashing due to a module not found error during startup, specifically the 'parcel_codec' module, which is not present in the expected environment.",
+        "evidence_ids": [
+          "log-1",
+          "log-2"
+        ],
+        "explanation": "The logs show that the container worker is crashing during startup due to a `ModuleNotFoundError` for `parcel_codec`, indicating a missing dependency or incorrect image configuration. The `CrashLoopBackOff` status suggests the container is repeatedly restarting, which is consistent with a container crash.",
+        "recommended_checks": [
+          "Verify that the image registry.example.invalid/demo/receipt-worker:release-4 contains the required dependencies.",
+          "Check the container's environment variables and configuration to ensure the correct dependencies are included.",
+          "Confirm that the image is correctly pulled and tagged for the target environment."
+        ],
+        "uncertain": true
+      },
+      "parse_errors": [],
+      "schema_errors": [],
+      "reference_errors": [],
+      "elapsed_seconds": 11.989844419000292
+    },
+    "measurement": {
+      "incident_id": "case-bf509e49b0c71bfeeea51950",
+      "input_tokens": 1190,
+      "output_tokens": 238,
+      "elapsed_seconds": 11.989844419000292,
+      "generated_tokens_per_second": 19.850132469012,
+      "peak_rss_bytes": 1793961984,
+      "process_lifetime_peak_rss_bytes": 4327968768,
+      "gpu_peak_allocated_bytes": 3651552256,
+      "gpu_peak_reserved_bytes": 3693084672,
+      "inference_error": null
+    }
+  },
+  "results": [
+    {
+      "repetition": 1,
+      "record": {
+        "incident_id": "case-bf509e49b0c71bfeeea51950",
+        "run": {
+          "run_id": "qwen-70d244cc86cc-cd884b0af54c-4e7350234cdf",
+          "backend_id": "transformers/Qwen/Qwen3-1.7B",
+          "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "prompt_version": "zero-shot-v1",
+          "decoding_settings": {
+            "model_id": "Qwen/Qwen3-1.7B",
+            "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "dtype": "bfloat16",
+            "device": "cuda",
+            "attention": "sdpa",
+            "threads": 4,
+            "seed": 42,
+            "max_input_tokens": 16384,
+            "max_new_tokens": 512,
+            "do_sample": false,
+            "enable_thinking": false,
+            "prompt_version": "zero-shot-v1"
+          },
+          "seed": 42,
+          "dataset_sha256": "cd884b0af54cb97f66c34838192e4502e8aef597a532b5b9723ad5dbc7a03bbd",
+          "environment": {
+            "python": "3.12.13",
+            "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+            "cpu": "x86_64",
+            "torch": "2.7.1+cu128",
+            "transformers": "4.57.6",
+            "cuda_runtime": "12.8",
+            "threads": "4",
+            "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+            "precision": "bfloat16",
+            "attention": "sdpa",
+            "split": "benchmark-warm",
+            "prompt_sha256": "4e7350234cdff042a02020c4e55779a3f1b5224d8f4b0b51ec5fe81ed60872cb",
+            "inference_source_sha256": "7e29c1539a570c89c642044b6bf1fb8bcfa7cae82ef3e06ba57668ae5df86ad7"
+          }
+        },
+        "raw_response": "{\n  \"incident_id\": \"case-bf509e49b0c71bfeeea51950\",\n  \"category\": \"container_crash\",\n  \"root_cause\": \"The container worker in pod receipt-worker-q3t9w is crashing due to a module not found error during startup, specifically the 'parcel_codec' module, which is not present in the expected environment.\",\n  \"evidence_ids\": [\"log-1\", \"log-2\"],\n  \"explanation\": \"The logs show that the container worker is crashing during startup due to a `ModuleNotFoundError` for `parcel_codec`, indicating a missing dependency or incorrect image configuration. The `CrashLoopBackOff` status suggests the container is repeatedly restarting, which is consistent with a container crash.\",\n  \"recommended_checks\": [\n    \"Verify that the image registry.example.invalid/demo/receipt-worker:release-4 contains the required dependencies.\",\n    \"Check the container's environment variables and configuration to ensure the correct dependencies are included.\",\n    \"Confirm that the image is correctly pulled and tagged for the target environment.\"\n  ],\n  \"uncertain\": true\n}",
+        "prediction": {
+          "incident_id": "case-bf509e49b0c71bfeeea51950",
+          "category": "container_crash",
+          "root_cause": "The container worker in pod receipt-worker-q3t9w is crashing due to a module not found error during startup, specifically the 'parcel_codec' module, which is not present in the expected environment.",
+          "evidence_ids": [
+            "log-1",
+            "log-2"
+          ],
+          "explanation": "The logs show that the container worker is crashing during startup due to a `ModuleNotFoundError` for `parcel_codec`, indicating a missing dependency or incorrect image configuration. The `CrashLoopBackOff` status suggests the container is repeatedly restarting, which is consistent with a container crash.",
+          "recommended_checks": [
+            "Verify that the image registry.example.invalid/demo/receipt-worker:release-4 contains the required dependencies.",
+            "Check the container's environment variables and configuration to ensure the correct dependencies are included.",
+            "Confirm that the image is correctly pulled and tagged for the target environment."
+          ],
+          "uncertain": true
+        },
+        "parse_errors": [],
+        "schema_errors": [],
+        "reference_errors": [],
+        "elapsed_seconds": 9.81712809199962
+      },
+      "measurement": {
+        "incident_id": "case-bf509e49b0c71bfeeea51950",
+        "input_tokens": 1190,
+        "output_tokens": 238,
+        "elapsed_seconds": 9.81712809199962,
+        "generated_tokens_per_second": 24.24334263234845,
+        "peak_rss_bytes": 1794355200,
+        "process_lifetime_peak_rss_bytes": 4327968768,
+        "gpu_peak_allocated_bytes": 3651609600,
+        "gpu_peak_reserved_bytes": 3693084672,
+        "inference_error": null
+      }
+    },
+    {
+      "repetition": 1,
+      "record": {
+        "incident_id": "case-f675c76d0733799914603359",
+        "run": {
+          "run_id": "qwen-70d244cc86cc-cd884b0af54c-4e7350234cdf",
+          "backend_id": "transformers/Qwen/Qwen3-1.7B",
+          "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "prompt_version": "zero-shot-v1",
+          "decoding_settings": {
+            "model_id": "Qwen/Qwen3-1.7B",
+            "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "dtype": "bfloat16",
+            "device": "cuda",
+            "attention": "sdpa",
+            "threads": 4,
+            "seed": 42,
+            "max_input_tokens": 16384,
+            "max_new_tokens": 512,
+            "do_sample": false,
+            "enable_thinking": false,
+            "prompt_version": "zero-shot-v1"
+          },
+          "seed": 42,
+          "dataset_sha256": "cd884b0af54cb97f66c34838192e4502e8aef597a532b5b9723ad5dbc7a03bbd",
+          "environment": {
+            "python": "3.12.13",
+            "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+            "cpu": "x86_64",
+            "torch": "2.7.1+cu128",
+            "transformers": "4.57.6",
+            "cuda_runtime": "12.8",
+            "threads": "4",
+            "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+            "precision": "bfloat16",
+            "attention": "sdpa",
+            "split": "benchmark-warm",
+            "prompt_sha256": "4e7350234cdff042a02020c4e55779a3f1b5224d8f4b0b51ec5fe81ed60872cb",
+            "inference_source_sha256": "7e29c1539a570c89c642044b6bf1fb8bcfa7cae82ef3e06ba57668ae5df86ad7"
+          }
+        },
+        "raw_response": "{\n  \"incident_id\": \"case-f675c76d0733799914603359\",\n  \"category\": \"image_pull_failure\",\n  \"root_cause\": \"The pod attempted to pull the image `registry.example.invalid/demo/image-worker:release-9` for container `api` on node `demo-node-b`, but the image was not found on the available platform `linux/amd64` (as specified in the supplied registry index snapshot). The event shows a warning that the platform `linux/arm64` was not found in the manifest.\",\n  \"evidence_ids\": [\"metadata-3\", \"event-2\"],\n  \"explanation\": \"The incident is caused by a mismatch between the requested platform (`linux/arm64`) and the available platforms in the registry index snapshot (`linux/amd64`). The pod attempted to pull the image but failed due to the platform not being found, leading to the `ImagePullBackOff` warning and the pod remaining in a `Pending` state.\",\n  \"recommended_checks\": [\n    \"Verify the registry index snapshot to ensure it includes the correct platform for the target node.\",\n    \"Check the node's platform and image compatibility in the Kubernetes cluster.\"\n  ],\n  \"uncertain\": true\n}",
+        "prediction": {
+          "incident_id": "case-f675c76d0733799914603359",
+          "category": "image_pull_failure",
+          "root_cause": "The pod attempted to pull the image `registry.example.invalid/demo/image-worker:release-9` for container `api` on node `demo-node-b`, but the image was not found on the available platform `linux/amd64` (as specified in the supplied registry index snapshot). The event shows a warning that the platform `linux/arm64` was not found in the manifest.",
+          "evidence_ids": [
+            "metadata-3",
+            "event-2"
+          ],
+          "explanation": "The incident is caused by a mismatch between the requested platform (`linux/arm64`) and the available platforms in the registry index snapshot (`linux/amd64`). The pod attempted to pull the image but failed due to the platform not being found, leading to the `ImagePullBackOff` warning and the pod remaining in a `Pending` state.",
+          "recommended_checks": [
+            "Verify the registry index snapshot to ensure it includes the correct platform for the target node.",
+            "Check the node's platform and image compatibility in the Kubernetes cluster."
+          ],
+          "uncertain": true
+        },
+        "parse_errors": [],
+        "schema_errors": [],
+        "reference_errors": [],
+        "elapsed_seconds": 10.569547792001686
+      },
+      "measurement": {
+        "incident_id": "case-f675c76d0733799914603359",
+        "input_tokens": 1462,
+        "output_tokens": 272,
+        "elapsed_seconds": 10.569547792001686,
+        "generated_tokens_per_second": 25.734308160830786,
+        "peak_rss_bytes": 1794617344,
+        "process_lifetime_peak_rss_bytes": 4327968768,
+        "gpu_peak_allocated_bytes": 3700665344,
+        "gpu_peak_reserved_bytes": 3770679296,
+        "inference_error": null
+      }
+    },
+    {
+      "repetition": 1,
+      "record": {
+        "incident_id": "case-b98870b3ffb39c94c2b49ba2",
+        "run": {
+          "run_id": "qwen-70d244cc86cc-cd884b0af54c-4e7350234cdf",
+          "backend_id": "transformers/Qwen/Qwen3-1.7B",
+          "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "prompt_version": "zero-shot-v1",
+          "decoding_settings": {
+            "model_id": "Qwen/Qwen3-1.7B",
+            "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "dtype": "bfloat16",
+            "device": "cuda",
+            "attention": "sdpa",
+            "threads": 4,
+            "seed": 42,
+            "max_input_tokens": 16384,
+            "max_new_tokens": 512,
+            "do_sample": false,
+            "enable_thinking": false,
+            "prompt_version": "zero-shot-v1"
+          },
+          "seed": 42,
+          "dataset_sha256": "cd884b0af54cb97f66c34838192e4502e8aef597a532b5b9723ad5dbc7a03bbd",
+          "environment": {
+            "python": "3.12.13",
+            "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+            "cpu": "x86_64",
+            "torch": "2.7.1+cu128",
+            "transformers": "4.57.6",
+            "cuda_runtime": "12.8",
+            "threads": "4",
+            "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+            "precision": "bfloat16",
+            "attention": "sdpa",
+            "split": "benchmark-warm",
+            "prompt_sha256": "4e7350234cdff042a02020c4e55779a3f1b5224d8f4b0b51ec5fe81ed60872cb",
+            "inference_source_sha256": "7e29c1539a570c89c642044b6bf1fb8bcfa7cae82ef3e06ba57668ae5df86ad7"
+          }
+        },
+        "raw_response": "{\n  \"incident_id\": \"case-b98870b3ffb39c94c2b49ba2\",\n  \"category\": \"image_pull_failure\",\n  \"root_cause\": \"The uploader container failed to pull the required image due to an unauthorized authentication error.\",\n  \"evidence_ids\": [\"event-1\"],\n  \"explanation\": \"The event indicates that the uploader container failed to pull the image, resulting in a 401 Unauthorized error. This directly points to an image pull failure.\",\n  \"recommended_checks\": [\n    \"Verify the image URL and credentials for the uploader container.\",\n    \"Check the Kubernetes service account and role bindings for the uploader container.\"\n  ],\n  \"uncertain\": false\n}",
+        "prediction": {
+          "incident_id": "case-b98870b3ffb39c94c2b49ba2",
+          "category": "image_pull_failure",
+          "root_cause": "The uploader container failed to pull the required image due to an unauthorized authentication error.",
+          "evidence_ids": [
+            "event-1"
+          ],
+          "explanation": "The event indicates that the uploader container failed to pull the image, resulting in a 401 Unauthorized error. This directly points to an image pull failure.",
+          "recommended_checks": [
+            "Verify the image URL and credentials for the uploader container.",
+            "Check the Kubernetes service account and role bindings for the uploader container."
+          ],
+          "uncertain": false
+        },
+        "parse_errors": [],
+        "schema_errors": [],
+        "reference_errors": [],
+        "elapsed_seconds": 6.19423181899765
+      },
+      "measurement": {
+        "incident_id": "case-b98870b3ffb39c94c2b49ba2",
+        "input_tokens": 591,
+        "output_tokens": 156,
+        "elapsed_seconds": 6.19423181899765,
+        "generated_tokens_per_second": 25.18472097242946,
+        "peak_rss_bytes": 1795010560,
+        "process_lifetime_peak_rss_bytes": 4327968768,
+        "gpu_peak_allocated_bytes": 3550760448,
+        "gpu_peak_reserved_bytes": 3770679296,
+        "inference_error": null
+      }
+    },
+    {
+      "repetition": 1,
+      "record": {
+        "incident_id": "case-b9292bb1efe84e0e4cab3d61",
+        "run": {
+          "run_id": "qwen-70d244cc86cc-cd884b0af54c-4e7350234cdf",
+          "backend_id": "transformers/Qwen/Qwen3-1.7B",
+          "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "prompt_version": "zero-shot-v1",
+          "decoding_settings": {
+            "model_id": "Qwen/Qwen3-1.7B",
+            "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "dtype": "bfloat16",
+            "device": "cuda",
+            "attention": "sdpa",
+            "threads": 4,
+            "seed": 42,
+            "max_input_tokens": 16384,
+            "max_new_tokens": 512,
+            "do_sample": false,
+            "enable_thinking": false,
+            "prompt_version": "zero-shot-v1"
+          },
+          "seed": 42,
+          "dataset_sha256": "cd884b0af54cb97f66c34838192e4502e8aef597a532b5b9723ad5dbc7a03bbd",
+          "environment": {
+            "python": "3.12.13",
+            "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+            "cpu": "x86_64",
+            "torch": "2.7.1+cu128",
+            "transformers": "4.57.6",
+            "cuda_runtime": "12.8",
+            "threads": "4",
+            "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+            "precision": "bfloat16",
+            "attention": "sdpa",
+            "split": "benchmark-warm",
+            "prompt_sha256": "4e7350234cdff042a02020c4e55779a3f1b5224d8f4b0b51ec5fe81ed60872cb",
+            "inference_source_sha256": "7e29c1539a570c89c642044b6bf1fb8bcfa7cae82ef3e06ba57668ae5df86ad7"
+          }
+        },
+        "raw_response": "{\n  \"incident_id\": \"case-b9292bb1efe84e0e4cab3d61\",\n  \"category\": \"container_crash\",\n  \"root_cause\": \"The container 'api' in pod 'gateway-api-z6s3w' is failing to start due to a missing Secret 'app-auth-v1' in the namespace 'demo-app'. The pod is in phase 'Pending' with a 'CreateContainerConfigError' reason, indicating the container configuration is invalid or missing required resources.\",\n  \"evidence_ids\": [\"metadata-1\", \"metadata-2\", \"event-1\", \"status-1\"],\n  \"explanation\": \"The pod is in a 'Pending' state with a 'CreateContainerConfigError' because the required Secret 'app-auth-v1' is missing. The event confirms the Secret is not found, and the metadata indicates the container is using 'app-auth-v1' as a required environment variable. The pod's status shows the container is not started, which aligns with the container crash diagnosis.\",\n  \"recommended_checks\": [\n    \"Verify that the Secret 'app-auth-v1' exists in the 'demo-app' namespace.\",\n    \"Check the pod's configuration to ensure all required environment variables are correctly set.\",\n    \"Confirm that the 'app-auth-v1' Secret is not being deleted or replaced by a different Secret.\"\n  ],\n  \"uncertain\": false\n}",
+        "prediction": {
+          "incident_id": "case-b9292bb1efe84e0e4cab3d61",
+          "category": "container_crash",
+          "root_cause": "The container 'api' in pod 'gateway-api-z6s3w' is failing to start due to a missing Secret 'app-auth-v1' in the namespace 'demo-app'. The pod is in phase 'Pending' with a 'CreateContainerConfigError' reason, indicating the container configuration is invalid or missing required resources.",
+          "evidence_ids": [
+            "metadata-1",
+            "metadata-2",
+            "event-1",
+            "status-1"
+          ],
+          "explanation": "The pod is in a 'Pending' state with a 'CreateContainerConfigError' because the required Secret 'app-auth-v1' is missing. The event confirms the Secret is not found, and the metadata indicates the container is using 'app-auth-v1' as a required environment variable. The pod's status shows the container is not started, which aligns with the container crash diagnosis.",
+          "recommended_checks": [
+            "Verify that the Secret 'app-auth-v1' exists in the 'demo-app' namespace.",
+            "Check the pod's configuration to ensure all required environment variables are correctly set.",
+            "Confirm that the 'app-auth-v1' Secret is not being deleted or replaced by a different Secret."
+          ],
+          "uncertain": false
+        },
+        "parse_errors": [],
+        "schema_errors": [],
+        "reference_errors": [],
+        "elapsed_seconds": 11.759661675001553
+      },
+      "measurement": {
+        "incident_id": "case-b9292bb1efe84e0e4cab3d61",
+        "input_tokens": 811,
+        "output_tokens": 300,
+        "elapsed_seconds": 11.759661675001553,
+        "generated_tokens_per_second": 25.510938009188976,
+        "peak_rss_bytes": 1795272704,
+        "process_lifetime_peak_rss_bytes": 4327968768,
+        "gpu_peak_allocated_bytes": 3587765248,
+        "gpu_peak_reserved_bytes": 3770679296,
+        "inference_error": null
+      }
+    },
+    {
+      "repetition": 1,
+      "record": {
+        "incident_id": "case-8377ef5ecc2eead6dc52cfdd",
+        "run": {
+          "run_id": "qwen-70d244cc86cc-cd884b0af54c-4e7350234cdf",
+          "backend_id": "transformers/Qwen/Qwen3-1.7B",
+          "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "prompt_version": "zero-shot-v1",
+          "decoding_settings": {
+            "model_id": "Qwen/Qwen3-1.7B",
+            "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "dtype": "bfloat16",
+            "device": "cuda",
+            "attention": "sdpa",
+            "threads": 4,
+            "seed": 42,
+            "max_input_tokens": 16384,
+            "max_new_tokens": 512,
+            "do_sample": false,
+            "enable_thinking": false,
+            "prompt_version": "zero-shot-v1"
+          },
+          "seed": 42,
+          "dataset_sha256": "cd884b0af54cb97f66c34838192e4502e8aef597a532b5b9723ad5dbc7a03bbd",
+          "environment": {
+            "python": "3.12.13",
+            "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+            "cpu": "x86_64",
+            "torch": "2.7.1+cu128",
+            "transformers": "4.57.6",
+            "cuda_runtime": "12.8",
+            "threads": "4",
+            "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+            "precision": "bfloat16",
+            "attention": "sdpa",
+            "split": "benchmark-warm",
+            "prompt_sha256": "4e7350234cdff042a02020c4e55779a3f1b5224d8f4b0b51ec5fe81ed60872cb",
+            "inference_source_sha256": "7e29c1539a570c89c642044b6bf1fb8bcfa7cae82ef3e06ba57668ae5df86ad7"
+          }
+        },
+        "raw_response": "{\n  \"incident_id\": \"case-8377ef5ecc2eead6dc52cfdd\",\n  \"category\": \"oom_killed\",\n  \"root_cause\": \"The container jvm attempt 1 was terminated by OOMKilled, as the container's memory usage exceeded its limit.\",\n  \"evidence_ids\": [\"termination-1\", \"status-1\", \"metadata-1\", \"metadata-2\"],\n  \"explanation\": \"The logs show that the container was terminated due to OOMKilled, with the memory usage reaching the container's limit. The memory limit for the container is 268435456 bytes, and the memory peak is also 268435456 bytes, indicating that the container was unable to allocate more memory and was forcibly terminated.\",\n  \"recommended_checks\": [\n    \"Check the container's memory usage and ensure it does not exceed the allocated limit.\",\n    \"Verify the JVM memory settings and ensure they are appropriately configured for the workload.\",\n    \"Monitor the container's memory usage over time to identify any patterns or anomalies.\"\n  ],\n  \"uncertain\": false\n}",
+        "prediction": {
+          "incident_id": "case-8377ef5ecc2eead6dc52cfdd",
+          "category": "oom_killed",
+          "root_cause": "The container jvm attempt 1 was terminated by OOMKilled, as the container's memory usage exceeded its limit.",
+          "evidence_ids": [
+            "termination-1",
+            "status-1",
+            "metadata-1",
+            "metadata-2"
+          ],
+          "explanation": "The logs show that the container was terminated due to OOMKilled, with the memory usage reaching the container's limit. The memory limit for the container is 268435456 bytes, and the memory peak is also 268435456 bytes, indicating that the container was unable to allocate more memory and was forcibly terminated.",
+          "recommended_checks": [
+            "Check the container's memory usage and ensure it does not exceed the allocated limit.",
+            "Verify the JVM memory settings and ensure they are appropriately configured for the workload.",
+            "Monitor the container's memory usage over time to identify any patterns or anomalies."
+          ],
+          "uncertain": false
+        },
+        "parse_errors": [],
+        "schema_errors": [],
+        "reference_errors": [],
+        "elapsed_seconds": 9.800262662000023
+      },
+      "measurement": {
+        "incident_id": "case-8377ef5ecc2eead6dc52cfdd",
+        "input_tokens": 1864,
+        "output_tokens": 245,
+        "elapsed_seconds": 9.800262662000023,
+        "generated_tokens_per_second": 24.99932996183602,
+        "peak_rss_bytes": 1795665920,
+        "process_lifetime_peak_rss_bytes": 4327968768,
+        "gpu_peak_allocated_bytes": 3766519296,
+        "gpu_peak_reserved_bytes": 3862953984,
+        "inference_error": null
+      }
+    },
+    {
+      "repetition": 1,
+      "record": {
+        "incident_id": "case-1c92f568302ee68d87cb7945",
+        "run": {
+          "run_id": "qwen-70d244cc86cc-cd884b0af54c-4e7350234cdf",
+          "backend_id": "transformers/Qwen/Qwen3-1.7B",
+          "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "prompt_version": "zero-shot-v1",
+          "decoding_settings": {
+            "model_id": "Qwen/Qwen3-1.7B",
+            "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "dtype": "bfloat16",
+            "device": "cuda",
+            "attention": "sdpa",
+            "threads": 4,
+            "seed": 42,
+            "max_input_tokens": 16384,
+            "max_new_tokens": 512,
+            "do_sample": false,
+            "enable_thinking": false,
+            "prompt_version": "zero-shot-v1"
+          },
+          "seed": 42,
+          "dataset_sha256": "cd884b0af54cb97f66c34838192e4502e8aef597a532b5b9723ad5dbc7a03bbd",
+          "environment": {
+            "python": "3.12.13",
+            "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+            "cpu": "x86_64",
+            "torch": "2.7.1+cu128",
+            "transformers": "4.57.6",
+            "cuda_runtime": "12.8",
+            "threads": "4",
+            "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+            "precision": "bfloat16",
+            "attention": "sdpa",
+            "split": "benchmark-warm",
+            "prompt_sha256": "4e7350234cdff042a02020c4e55779a3f1b5224d8f4b0b51ec5fe81ed60872cb",
+            "inference_source_sha256": "7e29c1539a570c89c642044b6bf1fb8bcfa7cae82ef3e06ba57668ae5df86ad7"
+          }
+        },
+        "raw_response": "{\n  \"incident_id\": \"case-1c92f568302ee68d87cb7945\",\n  \"category\": \"container_crash\",\n  \"root_cause\": \"Liveness probe failed: context deadline exceeded (Client.Timeout exceeded while awaiting headers). The probe failed repeatedly, leading to the container being marked as unhealthy and restarted.\",\n  \"evidence_ids\": [\"event-1\", \"event-2\", \"event-3\", \"event-kill\", \"termination-1\", \"status-1\"],\n  \"explanation\": \"The liveness probe failed three times, causing the container to be marked as unhealthy and restarted. The probe failed due to a context deadline exceeded error, which indicates that the probe was unable to complete its request within the allowed time frame. This led to the container being terminated and restarted, resulting in a CrashLoopBackOff state.\",\n  \"recommended_checks\": [\n    \"Check the liveness probe configuration to ensure it is correctly set up and configured for the target service.\",\n    \"Verify the network connectivity and availability of the target service (e.g., the HTTP endpoint at port 8080).\",\n    \"Check the container logs for more detailed error messages related to the liveness probe failure.\"\n  ],\n  \"uncertain\": false\n}",
+        "prediction": {
+          "incident_id": "case-1c92f568302ee68d87cb7945",
+          "category": "container_crash",
+          "root_cause": "Liveness probe failed: context deadline exceeded (Client.Timeout exceeded while awaiting headers). The probe failed repeatedly, leading to the container being marked as unhealthy and restarted.",
+          "evidence_ids": [
+            "event-1",
+            "event-2",
+            "event-3",
+            "event-kill",
+            "termination-1",
+            "status-1"
+          ],
+          "explanation": "The liveness probe failed three times, causing the container to be marked as unhealthy and restarted. The probe failed due to a context deadline exceeded error, which indicates that the probe was unable to complete its request within the allowed time frame. This led to the container being terminated and restarted, resulting in a CrashLoopBackOff state.",
+          "recommended_checks": [
+            "Check the liveness probe configuration to ensure it is correctly set up and configured for the target service.",
+            "Verify the network connectivity and availability of the target service (e.g., the HTTP endpoint at port 8080).",
+            "Check the container logs for more detailed error messages related to the liveness probe failure."
+          ],
+          "uncertain": false
+        },
+        "parse_errors": [],
+        "schema_errors": [],
+        "reference_errors": [],
+        "elapsed_seconds": 10.953730156998063
+      },
+      "measurement": {
+        "incident_id": "case-1c92f568302ee68d87cb7945",
+        "input_tokens": 1641,
+        "output_tokens": 274,
+        "elapsed_seconds": 10.953730156998063,
+        "generated_tokens_per_second": 25.014309835353053,
+        "peak_rss_bytes": 1795665920,
+        "process_lifetime_peak_rss_bytes": 4327968768,
+        "gpu_peak_allocated_bytes": 3728314880,
+        "gpu_peak_reserved_bytes": 3862953984,
+        "inference_error": null
+      }
+    },
+    {
+      "repetition": 1,
+      "record": {
+        "incident_id": "case-87ae3b409657fb6d37cdbc7f",
+        "run": {
+          "run_id": "qwen-70d244cc86cc-cd884b0af54c-4e7350234cdf",
+          "backend_id": "transformers/Qwen/Qwen3-1.7B",
+          "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "prompt_version": "zero-shot-v1",
+          "decoding_settings": {
+            "model_id": "Qwen/Qwen3-1.7B",
+            "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "dtype": "bfloat16",
+            "device": "cuda",
+            "attention": "sdpa",
+            "threads": 4,
+            "seed": 42,
+            "max_input_tokens": 16384,
+            "max_new_tokens": 512,
+            "do_sample": false,
+            "enable_thinking": false,
+            "prompt_version": "zero-shot-v1"
+          },
+          "seed": 42,
+          "dataset_sha256": "cd884b0af54cb97f66c34838192e4502e8aef597a532b5b9723ad5dbc7a03bbd",
+          "environment": {
+            "python": "3.12.13",
+            "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+            "cpu": "x86_64",
+            "torch": "2.7.1+cu128",
+            "transformers": "4.57.6",
+            "cuda_runtime": "12.8",
+            "threads": "4",
+            "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+            "precision": "bfloat16",
+            "attention": "sdpa",
+            "split": "benchmark-warm",
+            "prompt_sha256": "4e7350234cdff042a02020c4e55779a3f1b5224d8f4b0b51ec5fe81ed60872cb",
+            "inference_source_sha256": "7e29c1539a570c89c642044b6bf1fb8bcfa7cae82ef3e06ba57668ae5df86ad7"
+          }
+        },
+        "raw_response": "{\n  \"incident_id\": \"case-87ae3b409657fb6d37cdbc7f\",\n  \"category\": \"scheduling_failure\",\n  \"root_cause\": \"The pod vision-worker-p1j8w could not be scheduled due to insufficient NVIDIA GPU resources on the nodes, as indicated by the event '0/2 nodes are available: 2 Insufficient nvidia.com/gpu.'\",\n  \"evidence_ids\": [\"event-1\", \"status-1\"],\n  \"explanation\": \"The pod was in a Pending state with the reason 'Unschedulable' because the nodes lacked the required NVIDIA GPU resources, preventing the pod from being scheduled. The event explicitly states that two nodes are insufficient for the GPU requirement, and the status confirms the pod was not scheduled.\",\n  \"recommended_checks\": [\n    \"Verify the GPU requirements and available resources on the nodes.\",\n    \"Check if the GPU resource claim in the pod specification is correctly set.\",\n    \"Ensure that the NVIDIA GPU driver is properly installed and configured on the nodes.\"\n  ],\n  \"uncertain\": false\n}",
+        "prediction": {
+          "incident_id": "case-87ae3b409657fb6d37cdbc7f",
+          "category": "scheduling_failure",
+          "root_cause": "The pod vision-worker-p1j8w could not be scheduled due to insufficient NVIDIA GPU resources on the nodes, as indicated by the event '0/2 nodes are available: 2 Insufficient nvidia.com/gpu.'",
+          "evidence_ids": [
+            "event-1",
+            "status-1"
+          ],
+          "explanation": "The pod was in a Pending state with the reason 'Unschedulable' because the nodes lacked the required NVIDIA GPU resources, preventing the pod from being scheduled. The event explicitly states that two nodes are insufficient for the GPU requirement, and the status confirms the pod was not scheduled.",
+          "recommended_checks": [
+            "Verify the GPU requirements and available resources on the nodes.",
+            "Check if the GPU resource claim in the pod specification is correctly set.",
+            "Ensure that the NVIDIA GPU driver is properly installed and configured on the nodes."
+          ],
+          "uncertain": false
+        },
+        "parse_errors": [],
+        "schema_errors": [],
+        "reference_errors": [],
+        "elapsed_seconds": 9.249430669999128
+      },
+      "measurement": {
+        "incident_id": "case-87ae3b409657fb6d37cdbc7f",
+        "input_tokens": 1275,
+        "output_tokens": 235,
+        "elapsed_seconds": 9.249430669999128,
+        "generated_tokens_per_second": 25.406969183760815,
+        "peak_rss_bytes": 1795665920,
+        "process_lifetime_peak_rss_bytes": 4327968768,
+        "gpu_peak_allocated_bytes": 3665588736,
+        "gpu_peak_reserved_bytes": 3862953984,
+        "inference_error": null
+      }
+    },
+    {
+      "repetition": 2,
+      "record": {
+        "incident_id": "case-bf509e49b0c71bfeeea51950",
+        "run": {
+          "run_id": "qwen-70d244cc86cc-cd884b0af54c-4e7350234cdf",
+          "backend_id": "transformers/Qwen/Qwen3-1.7B",
+          "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "prompt_version": "zero-shot-v1",
+          "decoding_settings": {
+            "model_id": "Qwen/Qwen3-1.7B",
+            "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "dtype": "bfloat16",
+            "device": "cuda",
+            "attention": "sdpa",
+            "threads": 4,
+            "seed": 42,
+            "max_input_tokens": 16384,
+            "max_new_tokens": 512,
+            "do_sample": false,
+            "enable_thinking": false,
+            "prompt_version": "zero-shot-v1"
+          },
+          "seed": 42,
+          "dataset_sha256": "cd884b0af54cb97f66c34838192e4502e8aef597a532b5b9723ad5dbc7a03bbd",
+          "environment": {
+            "python": "3.12.13",
+            "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+            "cpu": "x86_64",
+            "torch": "2.7.1+cu128",
+            "transformers": "4.57.6",
+            "cuda_runtime": "12.8",
+            "threads": "4",
+            "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+            "precision": "bfloat16",
+            "attention": "sdpa",
+            "split": "benchmark-warm",
+            "prompt_sha256": "4e7350234cdff042a02020c4e55779a3f1b5224d8f4b0b51ec5fe81ed60872cb",
+            "inference_source_sha256": "7e29c1539a570c89c642044b6bf1fb8bcfa7cae82ef3e06ba57668ae5df86ad7"
+          }
+        },
+        "raw_response": "{\n  \"incident_id\": \"case-bf509e49b0c71bfeeea51950\",\n  \"category\": \"container_crash\",\n  \"root_cause\": \"The container worker in pod receipt-worker-q3t9w is crashing due to a module not found error during startup, specifically the 'parcel_codec' module, which is not present in the expected environment.\",\n  \"evidence_ids\": [\"log-1\", \"log-2\"],\n  \"explanation\": \"The logs show that the container worker is crashing during startup due to a `ModuleNotFoundError` for `parcel_codec`, indicating a missing dependency or incorrect image configuration. The `CrashLoopBackOff` status suggests the container is repeatedly restarting, which is consistent with a container crash.\",\n  \"recommended_checks\": [\n    \"Verify that the image registry.example.invalid/demo/receipt-worker:release-4 contains the required dependencies.\",\n    \"Check the container's environment variables and configuration to ensure the correct dependencies are included.\",\n    \"Confirm that the image is correctly pulled and tagged for the target environment.\"\n  ],\n  \"uncertain\": true\n}",
+        "prediction": {
+          "incident_id": "case-bf509e49b0c71bfeeea51950",
+          "category": "container_crash",
+          "root_cause": "The container worker in pod receipt-worker-q3t9w is crashing due to a module not found error during startup, specifically the 'parcel_codec' module, which is not present in the expected environment.",
+          "evidence_ids": [
+            "log-1",
+            "log-2"
+          ],
+          "explanation": "The logs show that the container worker is crashing during startup due to a `ModuleNotFoundError` for `parcel_codec`, indicating a missing dependency or incorrect image configuration. The `CrashLoopBackOff` status suggests the container is repeatedly restarting, which is consistent with a container crash.",
+          "recommended_checks": [
+            "Verify that the image registry.example.invalid/demo/receipt-worker:release-4 contains the required dependencies.",
+            "Check the container's environment variables and configuration to ensure the correct dependencies are included.",
+            "Confirm that the image is correctly pulled and tagged for the target environment."
+          ],
+          "uncertain": true
+        },
+        "parse_errors": [],
+        "schema_errors": [],
+        "reference_errors": [],
+        "elapsed_seconds": 9.533639709999989
+      },
+      "measurement": {
+        "incident_id": "case-bf509e49b0c71bfeeea51950",
+        "input_tokens": 1190,
+        "output_tokens": 238,
+        "elapsed_seconds": 9.533639709999989,
+        "generated_tokens_per_second": 24.964232679189454,
+        "peak_rss_bytes": 1795665920,
+        "process_lifetime_peak_rss_bytes": 4327968768,
+        "gpu_peak_allocated_bytes": 3651552256,
+        "gpu_peak_reserved_bytes": 3862953984,
+        "inference_error": null
+      }
+    },
+    {
+      "repetition": 2,
+      "record": {
+        "incident_id": "case-f675c76d0733799914603359",
+        "run": {
+          "run_id": "qwen-70d244cc86cc-cd884b0af54c-4e7350234cdf",
+          "backend_id": "transformers/Qwen/Qwen3-1.7B",
+          "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "prompt_version": "zero-shot-v1",
+          "decoding_settings": {
+            "model_id": "Qwen/Qwen3-1.7B",
+            "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "dtype": "bfloat16",
+            "device": "cuda",
+            "attention": "sdpa",
+            "threads": 4,
+            "seed": 42,
+            "max_input_tokens": 16384,
+            "max_new_tokens": 512,
+            "do_sample": false,
+            "enable_thinking": false,
+            "prompt_version": "zero-shot-v1"
+          },
+          "seed": 42,
+          "dataset_sha256": "cd884b0af54cb97f66c34838192e4502e8aef597a532b5b9723ad5dbc7a03bbd",
+          "environment": {
+            "python": "3.12.13",
+            "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+            "cpu": "x86_64",
+            "torch": "2.7.1+cu128",
+            "transformers": "4.57.6",
+            "cuda_runtime": "12.8",
+            "threads": "4",
+            "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+            "precision": "bfloat16",
+            "attention": "sdpa",
+            "split": "benchmark-warm",
+            "prompt_sha256": "4e7350234cdff042a02020c4e55779a3f1b5224d8f4b0b51ec5fe81ed60872cb",
+            "inference_source_sha256": "7e29c1539a570c89c642044b6bf1fb8bcfa7cae82ef3e06ba57668ae5df86ad7"
+          }
+        },
+        "raw_response": "{\n  \"incident_id\": \"case-f675c76d0733799914603359\",\n  \"category\": \"image_pull_failure\",\n  \"root_cause\": \"The pod attempted to pull the image `registry.example.invalid/demo/image-worker:release-9` for container `api` on node `demo-node-b`, but the image was not found on the available platform `linux/amd64` (as specified in the supplied registry index snapshot). The event shows a warning that the platform `linux/arm64` was not found in the manifest.\",\n  \"evidence_ids\": [\"metadata-3\", \"event-2\"],\n  \"explanation\": \"The incident is caused by a mismatch between the requested platform (`linux/arm64`) and the available platforms in the registry index snapshot (`linux/amd64`). The pod attempted to pull the image but failed due to the platform not being found, leading to the `ImagePullBackOff` warning and the pod remaining in a `Pending` state.\",\n  \"recommended_checks\": [\n    \"Verify the registry index snapshot to ensure it includes the correct platform for the target node.\",\n    \"Check the node's platform and image compatibility in the Kubernetes cluster.\"\n  ],\n  \"uncertain\": true\n}",
+        "prediction": {
+          "incident_id": "case-f675c76d0733799914603359",
+          "category": "image_pull_failure",
+          "root_cause": "The pod attempted to pull the image `registry.example.invalid/demo/image-worker:release-9` for container `api` on node `demo-node-b`, but the image was not found on the available platform `linux/amd64` (as specified in the supplied registry index snapshot). The event shows a warning that the platform `linux/arm64` was not found in the manifest.",
+          "evidence_ids": [
+            "metadata-3",
+            "event-2"
+          ],
+          "explanation": "The incident is caused by a mismatch between the requested platform (`linux/arm64`) and the available platforms in the registry index snapshot (`linux/amd64`). The pod attempted to pull the image but failed due to the platform not being found, leading to the `ImagePullBackOff` warning and the pod remaining in a `Pending` state.",
+          "recommended_checks": [
+            "Verify the registry index snapshot to ensure it includes the correct platform for the target node.",
+            "Check the node's platform and image compatibility in the Kubernetes cluster."
+          ],
+          "uncertain": true
+        },
+        "parse_errors": [],
+        "schema_errors": [],
+        "reference_errors": [],
+        "elapsed_seconds": 10.61336494400166
+      },
+      "measurement": {
+        "incident_id": "case-f675c76d0733799914603359",
+        "input_tokens": 1462,
+        "output_tokens": 272,
+        "elapsed_seconds": 10.61336494400166,
+        "generated_tokens_per_second": 25.628064373092705,
+        "peak_rss_bytes": 1795796992,
+        "process_lifetime_peak_rss_bytes": 4327968768,
+        "gpu_peak_allocated_bytes": 3700653056,
+        "gpu_peak_reserved_bytes": 3862953984,
+        "inference_error": null
+      }
+    },
+    {
+      "repetition": 2,
+      "record": {
+        "incident_id": "case-b98870b3ffb39c94c2b49ba2",
+        "run": {
+          "run_id": "qwen-70d244cc86cc-cd884b0af54c-4e7350234cdf",
+          "backend_id": "transformers/Qwen/Qwen3-1.7B",
+          "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "prompt_version": "zero-shot-v1",
+          "decoding_settings": {
+            "model_id": "Qwen/Qwen3-1.7B",
+            "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "dtype": "bfloat16",
+            "device": "cuda",
+            "attention": "sdpa",
+            "threads": 4,
+            "seed": 42,
+            "max_input_tokens": 16384,
+            "max_new_tokens": 512,
+            "do_sample": false,
+            "enable_thinking": false,
+            "prompt_version": "zero-shot-v1"
+          },
+          "seed": 42,
+          "dataset_sha256": "cd884b0af54cb97f66c34838192e4502e8aef597a532b5b9723ad5dbc7a03bbd",
+          "environment": {
+            "python": "3.12.13",
+            "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+            "cpu": "x86_64",
+            "torch": "2.7.1+cu128",
+            "transformers": "4.57.6",
+            "cuda_runtime": "12.8",
+            "threads": "4",
+            "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+            "precision": "bfloat16",
+            "attention": "sdpa",
+            "split": "benchmark-warm",
+            "prompt_sha256": "4e7350234cdff042a02020c4e55779a3f1b5224d8f4b0b51ec5fe81ed60872cb",
+            "inference_source_sha256": "7e29c1539a570c89c642044b6bf1fb8bcfa7cae82ef3e06ba57668ae5df86ad7"
+          }
+        },
+        "raw_response": "{\n  \"incident_id\": \"case-b98870b3ffb39c94c2b49ba2\",\n  \"category\": \"image_pull_failure\",\n  \"root_cause\": \"The uploader container failed to pull the required image due to an unauthorized authentication error.\",\n  \"evidence_ids\": [\"event-1\"],\n  \"explanation\": \"The event indicates that the uploader container failed to pull the image, resulting in a 401 Unauthorized error. This directly points to an image pull failure.\",\n  \"recommended_checks\": [\n    \"Verify the image URL and credentials for the uploader container.\",\n    \"Check the Kubernetes service account and role bindings for the uploader container.\"\n  ],\n  \"uncertain\": false\n}",
+        "prediction": {
+          "incident_id": "case-b98870b3ffb39c94c2b49ba2",
+          "category": "image_pull_failure",
+          "root_cause": "The uploader container failed to pull the required image due to an unauthorized authentication error.",
+          "evidence_ids": [
+            "event-1"
+          ],
+          "explanation": "The event indicates that the uploader container failed to pull the image, resulting in a 401 Unauthorized error. This directly points to an image pull failure.",
+          "recommended_checks": [
+            "Verify the image URL and credentials for the uploader container.",
+            "Check the Kubernetes service account and role bindings for the uploader container."
+          ],
+          "uncertain": false
+        },
+        "parse_errors": [],
+        "schema_errors": [],
+        "reference_errors": [],
+        "elapsed_seconds": 6.068212943002436
+      },
+      "measurement": {
+        "incident_id": "case-b98870b3ffb39c94c2b49ba2",
+        "input_tokens": 591,
+        "output_tokens": 156,
+        "elapsed_seconds": 6.068212943002436,
+        "generated_tokens_per_second": 25.707733308846965,
+        "peak_rss_bytes": 1795796992,
+        "process_lifetime_peak_rss_bytes": 4327968768,
+        "gpu_peak_allocated_bytes": 3550760448,
+        "gpu_peak_reserved_bytes": 3862953984,
+        "inference_error": null
+      }
+    },
+    {
+      "repetition": 2,
+      "record": {
+        "incident_id": "case-b9292bb1efe84e0e4cab3d61",
+        "run": {
+          "run_id": "qwen-70d244cc86cc-cd884b0af54c-4e7350234cdf",
+          "backend_id": "transformers/Qwen/Qwen3-1.7B",
+          "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "prompt_version": "zero-shot-v1",
+          "decoding_settings": {
+            "model_id": "Qwen/Qwen3-1.7B",
+            "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "dtype": "bfloat16",
+            "device": "cuda",
+            "attention": "sdpa",
+            "threads": 4,
+            "seed": 42,
+            "max_input_tokens": 16384,
+            "max_new_tokens": 512,
+            "do_sample": false,
+            "enable_thinking": false,
+            "prompt_version": "zero-shot-v1"
+          },
+          "seed": 42,
+          "dataset_sha256": "cd884b0af54cb97f66c34838192e4502e8aef597a532b5b9723ad5dbc7a03bbd",
+          "environment": {
+            "python": "3.12.13",
+            "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+            "cpu": "x86_64",
+            "torch": "2.7.1+cu128",
+            "transformers": "4.57.6",
+            "cuda_runtime": "12.8",
+            "threads": "4",
+            "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+            "precision": "bfloat16",
+            "attention": "sdpa",
+            "split": "benchmark-warm",
+            "prompt_sha256": "4e7350234cdff042a02020c4e55779a3f1b5224d8f4b0b51ec5fe81ed60872cb",
+            "inference_source_sha256": "7e29c1539a570c89c642044b6bf1fb8bcfa7cae82ef3e06ba57668ae5df86ad7"
+          }
+        },
+        "raw_response": "{\n  \"incident_id\": \"case-b9292bb1efe84e0e4cab3d61\",\n  \"category\": \"container_crash\",\n  \"root_cause\": \"The container 'api' in pod 'gateway-api-z6s3w' is failing to start due to a missing Secret 'app-auth-v1' in the namespace 'demo-app'. The pod is in phase 'Pending' with a 'CreateContainerConfigError' reason, indicating the container configuration is invalid or missing required resources.\",\n  \"evidence_ids\": [\"metadata-1\", \"metadata-2\", \"event-1\", \"status-1\"],\n  \"explanation\": \"The pod is in a 'Pending' state with a 'CreateContainerConfigError' because the required Secret 'app-auth-v1' is missing. The event confirms the Secret is not found, and the metadata indicates the container is using 'app-auth-v1' as a required environment variable. The pod's status shows the container is not started, which aligns with the container crash diagnosis.\",\n  \"recommended_checks\": [\n    \"Verify that the Secret 'app-auth-v1' exists in the 'demo-app' namespace.\",\n    \"Check the pod's configuration to ensure all required environment variables are correctly set.\",\n    \"Confirm that the 'app-auth-v1' Secret is not being deleted or replaced by a different Secret.\"\n  ],\n  \"uncertain\": false\n}",
+        "prediction": {
+          "incident_id": "case-b9292bb1efe84e0e4cab3d61",
+          "category": "container_crash",
+          "root_cause": "The container 'api' in pod 'gateway-api-z6s3w' is failing to start due to a missing Secret 'app-auth-v1' in the namespace 'demo-app'. The pod is in phase 'Pending' with a 'CreateContainerConfigError' reason, indicating the container configuration is invalid or missing required resources.",
+          "evidence_ids": [
+            "metadata-1",
+            "metadata-2",
+            "event-1",
+            "status-1"
+          ],
+          "explanation": "The pod is in a 'Pending' state with a 'CreateContainerConfigError' because the required Secret 'app-auth-v1' is missing. The event confirms the Secret is not found, and the metadata indicates the container is using 'app-auth-v1' as a required environment variable. The pod's status shows the container is not started, which aligns with the container crash diagnosis.",
+          "recommended_checks": [
+            "Verify that the Secret 'app-auth-v1' exists in the 'demo-app' namespace.",
+            "Check the pod's configuration to ensure all required environment variables are correctly set.",
+            "Confirm that the 'app-auth-v1' Secret is not being deleted or replaced by a different Secret."
+          ],
+          "uncertain": false
+        },
+        "parse_errors": [],
+        "schema_errors": [],
+        "reference_errors": [],
+        "elapsed_seconds": 14.915095717999066
+      },
+      "measurement": {
+        "incident_id": "case-b9292bb1efe84e0e4cab3d61",
+        "input_tokens": 811,
+        "output_tokens": 300,
+        "elapsed_seconds": 14.915095717999066,
+        "generated_tokens_per_second": 20.11385013359113,
+        "peak_rss_bytes": 1795796992,
+        "process_lifetime_peak_rss_bytes": 4327968768,
+        "gpu_peak_allocated_bytes": 3587765248,
+        "gpu_peak_reserved_bytes": 3862953984,
+        "inference_error": null
+      }
+    },
+    {
+      "repetition": 2,
+      "record": {
+        "incident_id": "case-8377ef5ecc2eead6dc52cfdd",
+        "run": {
+          "run_id": "qwen-70d244cc86cc-cd884b0af54c-4e7350234cdf",
+          "backend_id": "transformers/Qwen/Qwen3-1.7B",
+          "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "prompt_version": "zero-shot-v1",
+          "decoding_settings": {
+            "model_id": "Qwen/Qwen3-1.7B",
+            "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "dtype": "bfloat16",
+            "device": "cuda",
+            "attention": "sdpa",
+            "threads": 4,
+            "seed": 42,
+            "max_input_tokens": 16384,
+            "max_new_tokens": 512,
+            "do_sample": false,
+            "enable_thinking": false,
+            "prompt_version": "zero-shot-v1"
+          },
+          "seed": 42,
+          "dataset_sha256": "cd884b0af54cb97f66c34838192e4502e8aef597a532b5b9723ad5dbc7a03bbd",
+          "environment": {
+            "python": "3.12.13",
+            "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+            "cpu": "x86_64",
+            "torch": "2.7.1+cu128",
+            "transformers": "4.57.6",
+            "cuda_runtime": "12.8",
+            "threads": "4",
+            "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+            "precision": "bfloat16",
+            "attention": "sdpa",
+            "split": "benchmark-warm",
+            "prompt_sha256": "4e7350234cdff042a02020c4e55779a3f1b5224d8f4b0b51ec5fe81ed60872cb",
+            "inference_source_sha256": "7e29c1539a570c89c642044b6bf1fb8bcfa7cae82ef3e06ba57668ae5df86ad7"
+          }
+        },
+        "raw_response": "{\n  \"incident_id\": \"case-8377ef5ecc2eead6dc52cfdd\",\n  \"category\": \"oom_killed\",\n  \"root_cause\": \"The container jvm attempt 1 was terminated by OOMKilled, as the container's memory usage exceeded its limit.\",\n  \"evidence_ids\": [\"termination-1\", \"status-1\", \"metadata-1\", \"metadata-2\"],\n  \"explanation\": \"The logs show that the container was terminated due to OOMKilled, with the memory usage reaching the container's limit. The memory limit for the container is 268435456 bytes, and the memory peak is also 268435456 bytes, indicating that the container was unable to allocate more memory and was forcibly terminated.\",\n  \"recommended_checks\": [\n    \"Check the container's memory usage and ensure it does not exceed the allocated limit.\",\n    \"Verify the JVM memory settings and ensure they are appropriately configured for the workload.\",\n    \"Monitor the container's memory usage over time to identify any patterns or anomalies.\"\n  ],\n  \"uncertain\": false\n}",
+        "prediction": {
+          "incident_id": "case-8377ef5ecc2eead6dc52cfdd",
+          "category": "oom_killed",
+          "root_cause": "The container jvm attempt 1 was terminated by OOMKilled, as the container's memory usage exceeded its limit.",
+          "evidence_ids": [
+            "termination-1",
+            "status-1",
+            "metadata-1",
+            "metadata-2"
+          ],
+          "explanation": "The logs show that the container was terminated due to OOMKilled, with the memory usage reaching the container's limit. The memory limit for the container is 268435456 bytes, and the memory peak is also 268435456 bytes, indicating that the container was unable to allocate more memory and was forcibly terminated.",
+          "recommended_checks": [
+            "Check the container's memory usage and ensure it does not exceed the allocated limit.",
+            "Verify the JVM memory settings and ensure they are appropriately configured for the workload.",
+            "Monitor the container's memory usage over time to identify any patterns or anomalies."
+          ],
+          "uncertain": false
+        },
+        "parse_errors": [],
+        "schema_errors": [],
+        "reference_errors": [],
+        "elapsed_seconds": 12.776017193998996
+      },
+      "measurement": {
+        "incident_id": "case-8377ef5ecc2eead6dc52cfdd",
+        "input_tokens": 1864,
+        "output_tokens": 245,
+        "elapsed_seconds": 12.776017193998996,
+        "generated_tokens_per_second": 19.176555281647445,
+        "peak_rss_bytes": 1795796992,
+        "process_lifetime_peak_rss_bytes": 4327968768,
+        "gpu_peak_allocated_bytes": 3766519296,
+        "gpu_peak_reserved_bytes": 3862953984,
+        "inference_error": null
+      }
+    },
+    {
+      "repetition": 2,
+      "record": {
+        "incident_id": "case-1c92f568302ee68d87cb7945",
+        "run": {
+          "run_id": "qwen-70d244cc86cc-cd884b0af54c-4e7350234cdf",
+          "backend_id": "transformers/Qwen/Qwen3-1.7B",
+          "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "prompt_version": "zero-shot-v1",
+          "decoding_settings": {
+            "model_id": "Qwen/Qwen3-1.7B",
+            "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "dtype": "bfloat16",
+            "device": "cuda",
+            "attention": "sdpa",
+            "threads": 4,
+            "seed": 42,
+            "max_input_tokens": 16384,
+            "max_new_tokens": 512,
+            "do_sample": false,
+            "enable_thinking": false,
+            "prompt_version": "zero-shot-v1"
+          },
+          "seed": 42,
+          "dataset_sha256": "cd884b0af54cb97f66c34838192e4502e8aef597a532b5b9723ad5dbc7a03bbd",
+          "environment": {
+            "python": "3.12.13",
+            "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+            "cpu": "x86_64",
+            "torch": "2.7.1+cu128",
+            "transformers": "4.57.6",
+            "cuda_runtime": "12.8",
+            "threads": "4",
+            "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+            "precision": "bfloat16",
+            "attention": "sdpa",
+            "split": "benchmark-warm",
+            "prompt_sha256": "4e7350234cdff042a02020c4e55779a3f1b5224d8f4b0b51ec5fe81ed60872cb",
+            "inference_source_sha256": "7e29c1539a570c89c642044b6bf1fb8bcfa7cae82ef3e06ba57668ae5df86ad7"
+          }
+        },
+        "raw_response": "{\n  \"incident_id\": \"case-1c92f568302ee68d87cb7945\",\n  \"category\": \"container_crash\",\n  \"root_cause\": \"Liveness probe failed: context deadline exceeded (Client.Timeout exceeded while awaiting headers). The probe failed repeatedly, leading to the container being marked as unhealthy and restarted.\",\n  \"evidence_ids\": [\"event-1\", \"event-2\", \"event-3\", \"event-kill\", \"termination-1\", \"status-1\"],\n  \"explanation\": \"The liveness probe failed three times, causing the container to be marked as unhealthy and restarted. The probe failed due to a context deadline exceeded error, which indicates that the probe was unable to complete its request within the allowed time frame. This led to the container being terminated and restarted, resulting in a CrashLoopBackOff state.\",\n  \"recommended_checks\": [\n    \"Check the liveness probe configuration to ensure it is correctly set up and configured for the target service.\",\n    \"Verify the network connectivity and availability of the target service (e.g., the HTTP endpoint at port 8080).\",\n    \"Check the container logs for more detailed error messages related to the liveness probe failure.\"\n  ],\n  \"uncertain\": false\n}",
+        "prediction": {
+          "incident_id": "case-1c92f568302ee68d87cb7945",
+          "category": "container_crash",
+          "root_cause": "Liveness probe failed: context deadline exceeded (Client.Timeout exceeded while awaiting headers). The probe failed repeatedly, leading to the container being marked as unhealthy and restarted.",
+          "evidence_ids": [
+            "event-1",
+            "event-2",
+            "event-3",
+            "event-kill",
+            "termination-1",
+            "status-1"
+          ],
+          "explanation": "The liveness probe failed three times, causing the container to be marked as unhealthy and restarted. The probe failed due to a context deadline exceeded error, which indicates that the probe was unable to complete its request within the allowed time frame. This led to the container being terminated and restarted, resulting in a CrashLoopBackOff state.",
+          "recommended_checks": [
+            "Check the liveness probe configuration to ensure it is correctly set up and configured for the target service.",
+            "Verify the network connectivity and availability of the target service (e.g., the HTTP endpoint at port 8080).",
+            "Check the container logs for more detailed error messages related to the liveness probe failure."
+          ],
+          "uncertain": false
+        },
+        "parse_errors": [],
+        "schema_errors": [],
+        "reference_errors": [],
+        "elapsed_seconds": 11.699302703000285
+      },
+      "measurement": {
+        "incident_id": "case-1c92f568302ee68d87cb7945",
+        "input_tokens": 1641,
+        "output_tokens": 274,
+        "elapsed_seconds": 11.699302703000285,
+        "generated_tokens_per_second": 23.42019921663645,
+        "peak_rss_bytes": 1795796992,
+        "process_lifetime_peak_rss_bytes": 4327968768,
+        "gpu_peak_allocated_bytes": 3728314880,
+        "gpu_peak_reserved_bytes": 3862953984,
+        "inference_error": null
+      }
+    },
+    {
+      "repetition": 2,
+      "record": {
+        "incident_id": "case-87ae3b409657fb6d37cdbc7f",
+        "run": {
+          "run_id": "qwen-70d244cc86cc-cd884b0af54c-4e7350234cdf",
+          "backend_id": "transformers/Qwen/Qwen3-1.7B",
+          "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "prompt_version": "zero-shot-v1",
+          "decoding_settings": {
+            "model_id": "Qwen/Qwen3-1.7B",
+            "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "dtype": "bfloat16",
+            "device": "cuda",
+            "attention": "sdpa",
+            "threads": 4,
+            "seed": 42,
+            "max_input_tokens": 16384,
+            "max_new_tokens": 512,
+            "do_sample": false,
+            "enable_thinking": false,
+            "prompt_version": "zero-shot-v1"
+          },
+          "seed": 42,
+          "dataset_sha256": "cd884b0af54cb97f66c34838192e4502e8aef597a532b5b9723ad5dbc7a03bbd",
+          "environment": {
+            "python": "3.12.13",
+            "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+            "cpu": "x86_64",
+            "torch": "2.7.1+cu128",
+            "transformers": "4.57.6",
+            "cuda_runtime": "12.8",
+            "threads": "4",
+            "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+            "precision": "bfloat16",
+            "attention": "sdpa",
+            "split": "benchmark-warm",
+            "prompt_sha256": "4e7350234cdff042a02020c4e55779a3f1b5224d8f4b0b51ec5fe81ed60872cb",
+            "inference_source_sha256": "7e29c1539a570c89c642044b6bf1fb8bcfa7cae82ef3e06ba57668ae5df86ad7"
+          }
+        },
+        "raw_response": "{\n  \"incident_id\": \"case-87ae3b409657fb6d37cdbc7f\",\n  \"category\": \"scheduling_failure\",\n  \"root_cause\": \"The pod vision-worker-p1j8w could not be scheduled due to insufficient NVIDIA GPU resources on the nodes, as indicated by the event '0/2 nodes are available: 2 Insufficient nvidia.com/gpu.'\",\n  \"evidence_ids\": [\"event-1\", \"status-1\"],\n  \"explanation\": \"The pod was in a Pending state with the reason 'Unschedulable' because the nodes lacked the required NVIDIA GPU resources, preventing the pod from being scheduled. The event explicitly states that two nodes are insufficient for the GPU requirement, and the status confirms the pod was not scheduled.\",\n  \"recommended_checks\": [\n    \"Verify the GPU requirements and available resources on the nodes.\",\n    \"Check if the GPU resource claim in the pod specification is correctly set.\",\n    \"Ensure that the NVIDIA GPU driver is properly installed and configured on the nodes.\"\n  ],\n  \"uncertain\": false\n}",
+        "prediction": {
+          "incident_id": "case-87ae3b409657fb6d37cdbc7f",
+          "category": "scheduling_failure",
+          "root_cause": "The pod vision-worker-p1j8w could not be scheduled due to insufficient NVIDIA GPU resources on the nodes, as indicated by the event '0/2 nodes are available: 2 Insufficient nvidia.com/gpu.'",
+          "evidence_ids": [
+            "event-1",
+            "status-1"
+          ],
+          "explanation": "The pod was in a Pending state with the reason 'Unschedulable' because the nodes lacked the required NVIDIA GPU resources, preventing the pod from being scheduled. The event explicitly states that two nodes are insufficient for the GPU requirement, and the status confirms the pod was not scheduled.",
+          "recommended_checks": [
+            "Verify the GPU requirements and available resources on the nodes.",
+            "Check if the GPU resource claim in the pod specification is correctly set.",
+            "Ensure that the NVIDIA GPU driver is properly installed and configured on the nodes."
+          ],
+          "uncertain": false
+        },
+        "parse_errors": [],
+        "schema_errors": [],
+        "reference_errors": [],
+        "elapsed_seconds": 9.841336151999712
+      },
+      "measurement": {
+        "incident_id": "case-87ae3b409657fb6d37cdbc7f",
+        "input_tokens": 1275,
+        "output_tokens": 235,
+        "elapsed_seconds": 9.841336151999712,
+        "generated_tokens_per_second": 23.87887136161375,
+        "peak_rss_bytes": 1795796992,
+        "process_lifetime_peak_rss_bytes": 4327968768,
+        "gpu_peak_allocated_bytes": 3665588736,
+        "gpu_peak_reserved_bytes": 3862953984,
+        "inference_error": null
+      }
+    },
+    {
+      "repetition": 3,
+      "record": {
+        "incident_id": "case-bf509e49b0c71bfeeea51950",
+        "run": {
+          "run_id": "qwen-70d244cc86cc-cd884b0af54c-4e7350234cdf",
+          "backend_id": "transformers/Qwen/Qwen3-1.7B",
+          "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "prompt_version": "zero-shot-v1",
+          "decoding_settings": {
+            "model_id": "Qwen/Qwen3-1.7B",
+            "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "dtype": "bfloat16",
+            "device": "cuda",
+            "attention": "sdpa",
+            "threads": 4,
+            "seed": 42,
+            "max_input_tokens": 16384,
+            "max_new_tokens": 512,
+            "do_sample": false,
+            "enable_thinking": false,
+            "prompt_version": "zero-shot-v1"
+          },
+          "seed": 42,
+          "dataset_sha256": "cd884b0af54cb97f66c34838192e4502e8aef597a532b5b9723ad5dbc7a03bbd",
+          "environment": {
+            "python": "3.12.13",
+            "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+            "cpu": "x86_64",
+            "torch": "2.7.1+cu128",
+            "transformers": "4.57.6",
+            "cuda_runtime": "12.8",
+            "threads": "4",
+            "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+            "precision": "bfloat16",
+            "attention": "sdpa",
+            "split": "benchmark-warm",
+            "prompt_sha256": "4e7350234cdff042a02020c4e55779a3f1b5224d8f4b0b51ec5fe81ed60872cb",
+            "inference_source_sha256": "7e29c1539a570c89c642044b6bf1fb8bcfa7cae82ef3e06ba57668ae5df86ad7"
+          }
+        },
+        "raw_response": "{\n  \"incident_id\": \"case-bf509e49b0c71bfeeea51950\",\n  \"category\": \"container_crash\",\n  \"root_cause\": \"The container worker in pod receipt-worker-q3t9w is crashing due to a module not found error during startup, specifically the 'parcel_codec' module, which is not present in the expected environment.\",\n  \"evidence_ids\": [\"log-1\", \"log-2\"],\n  \"explanation\": \"The logs show that the container worker is crashing during startup due to a `ModuleNotFoundError` for `parcel_codec`, indicating a missing dependency or incorrect image configuration. The `CrashLoopBackOff` status suggests the container is repeatedly restarting, which is consistent with a container crash.\",\n  \"recommended_checks\": [\n    \"Verify that the image registry.example.invalid/demo/receipt-worker:release-4 contains the required dependencies.\",\n    \"Check the container's environment variables and configuration to ensure the correct dependencies are included.\",\n    \"Confirm that the image is correctly pulled and tagged for the target environment.\"\n  ],\n  \"uncertain\": true\n}",
+        "prediction": {
+          "incident_id": "case-bf509e49b0c71bfeeea51950",
+          "category": "container_crash",
+          "root_cause": "The container worker in pod receipt-worker-q3t9w is crashing due to a module not found error during startup, specifically the 'parcel_codec' module, which is not present in the expected environment.",
+          "evidence_ids": [
+            "log-1",
+            "log-2"
+          ],
+          "explanation": "The logs show that the container worker is crashing during startup due to a `ModuleNotFoundError` for `parcel_codec`, indicating a missing dependency or incorrect image configuration. The `CrashLoopBackOff` status suggests the container is repeatedly restarting, which is consistent with a container crash.",
+          "recommended_checks": [
+            "Verify that the image registry.example.invalid/demo/receipt-worker:release-4 contains the required dependencies.",
+            "Check the container's environment variables and configuration to ensure the correct dependencies are included.",
+            "Confirm that the image is correctly pulled and tagged for the target environment."
+          ],
+          "uncertain": true
+        },
+        "parse_errors": [],
+        "schema_errors": [],
+        "reference_errors": [],
+        "elapsed_seconds": 9.627594859000965
+      },
+      "measurement": {
+        "incident_id": "case-bf509e49b0c71bfeeea51950",
+        "input_tokens": 1190,
+        "output_tokens": 238,
+        "elapsed_seconds": 9.627594859000965,
+        "generated_tokens_per_second": 24.720608156614595,
+        "peak_rss_bytes": 1795796992,
+        "process_lifetime_peak_rss_bytes": 4327968768,
+        "gpu_peak_allocated_bytes": 3651552256,
+        "gpu_peak_reserved_bytes": 3862953984,
+        "inference_error": null
+      }
+    },
+    {
+      "repetition": 3,
+      "record": {
+        "incident_id": "case-f675c76d0733799914603359",
+        "run": {
+          "run_id": "qwen-70d244cc86cc-cd884b0af54c-4e7350234cdf",
+          "backend_id": "transformers/Qwen/Qwen3-1.7B",
+          "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "prompt_version": "zero-shot-v1",
+          "decoding_settings": {
+            "model_id": "Qwen/Qwen3-1.7B",
+            "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "dtype": "bfloat16",
+            "device": "cuda",
+            "attention": "sdpa",
+            "threads": 4,
+            "seed": 42,
+            "max_input_tokens": 16384,
+            "max_new_tokens": 512,
+            "do_sample": false,
+            "enable_thinking": false,
+            "prompt_version": "zero-shot-v1"
+          },
+          "seed": 42,
+          "dataset_sha256": "cd884b0af54cb97f66c34838192e4502e8aef597a532b5b9723ad5dbc7a03bbd",
+          "environment": {
+            "python": "3.12.13",
+            "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+            "cpu": "x86_64",
+            "torch": "2.7.1+cu128",
+            "transformers": "4.57.6",
+            "cuda_runtime": "12.8",
+            "threads": "4",
+            "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+            "precision": "bfloat16",
+            "attention": "sdpa",
+            "split": "benchmark-warm",
+            "prompt_sha256": "4e7350234cdff042a02020c4e55779a3f1b5224d8f4b0b51ec5fe81ed60872cb",
+            "inference_source_sha256": "7e29c1539a570c89c642044b6bf1fb8bcfa7cae82ef3e06ba57668ae5df86ad7"
+          }
+        },
+        "raw_response": "{\n  \"incident_id\": \"case-f675c76d0733799914603359\",\n  \"category\": \"image_pull_failure\",\n  \"root_cause\": \"The pod attempted to pull the image `registry.example.invalid/demo/image-worker:release-9` for container `api` on node `demo-node-b`, but the image was not found on the available platform `linux/amd64` (as specified in the supplied registry index snapshot). The event shows a warning that the platform `linux/arm64` was not found in the manifest.\",\n  \"evidence_ids\": [\"metadata-3\", \"event-2\"],\n  \"explanation\": \"The incident is caused by a mismatch between the requested platform (`linux/arm64`) and the available platforms in the registry index snapshot (`linux/amd64`). The pod attempted to pull the image but failed due to the platform not being found, leading to the `ImagePullBackOff` warning and the pod remaining in a `Pending` state.\",\n  \"recommended_checks\": [\n    \"Verify the registry index snapshot to ensure it includes the correct platform for the target node.\",\n    \"Check the node's platform and image compatibility in the Kubernetes cluster.\"\n  ],\n  \"uncertain\": true\n}",
+        "prediction": {
+          "incident_id": "case-f675c76d0733799914603359",
+          "category": "image_pull_failure",
+          "root_cause": "The pod attempted to pull the image `registry.example.invalid/demo/image-worker:release-9` for container `api` on node `demo-node-b`, but the image was not found on the available platform `linux/amd64` (as specified in the supplied registry index snapshot). The event shows a warning that the platform `linux/arm64` was not found in the manifest.",
+          "evidence_ids": [
+            "metadata-3",
+            "event-2"
+          ],
+          "explanation": "The incident is caused by a mismatch between the requested platform (`linux/arm64`) and the available platforms in the registry index snapshot (`linux/amd64`). The pod attempted to pull the image but failed due to the platform not being found, leading to the `ImagePullBackOff` warning and the pod remaining in a `Pending` state.",
+          "recommended_checks": [
+            "Verify the registry index snapshot to ensure it includes the correct platform for the target node.",
+            "Check the node's platform and image compatibility in the Kubernetes cluster."
+          ],
+          "uncertain": true
+        },
+        "parse_errors": [],
+        "schema_errors": [],
+        "reference_errors": [],
+        "elapsed_seconds": 11.029661295000551
+      },
+      "measurement": {
+        "incident_id": "case-f675c76d0733799914603359",
+        "input_tokens": 1462,
+        "output_tokens": 272,
+        "elapsed_seconds": 11.029661295000551,
+        "generated_tokens_per_second": 24.660775405976455,
+        "peak_rss_bytes": 1795796992,
+        "process_lifetime_peak_rss_bytes": 4327968768,
+        "gpu_peak_allocated_bytes": 3700653056,
+        "gpu_peak_reserved_bytes": 3862953984,
+        "inference_error": null
+      }
+    },
+    {
+      "repetition": 3,
+      "record": {
+        "incident_id": "case-b98870b3ffb39c94c2b49ba2",
+        "run": {
+          "run_id": "qwen-70d244cc86cc-cd884b0af54c-4e7350234cdf",
+          "backend_id": "transformers/Qwen/Qwen3-1.7B",
+          "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "prompt_version": "zero-shot-v1",
+          "decoding_settings": {
+            "model_id": "Qwen/Qwen3-1.7B",
+            "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "dtype": "bfloat16",
+            "device": "cuda",
+            "attention": "sdpa",
+            "threads": 4,
+            "seed": 42,
+            "max_input_tokens": 16384,
+            "max_new_tokens": 512,
+            "do_sample": false,
+            "enable_thinking": false,
+            "prompt_version": "zero-shot-v1"
+          },
+          "seed": 42,
+          "dataset_sha256": "cd884b0af54cb97f66c34838192e4502e8aef597a532b5b9723ad5dbc7a03bbd",
+          "environment": {
+            "python": "3.12.13",
+            "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+            "cpu": "x86_64",
+            "torch": "2.7.1+cu128",
+            "transformers": "4.57.6",
+            "cuda_runtime": "12.8",
+            "threads": "4",
+            "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+            "precision": "bfloat16",
+            "attention": "sdpa",
+            "split": "benchmark-warm",
+            "prompt_sha256": "4e7350234cdff042a02020c4e55779a3f1b5224d8f4b0b51ec5fe81ed60872cb",
+            "inference_source_sha256": "7e29c1539a570c89c642044b6bf1fb8bcfa7cae82ef3e06ba57668ae5df86ad7"
+          }
+        },
+        "raw_response": "{\n  \"incident_id\": \"case-b98870b3ffb39c94c2b49ba2\",\n  \"category\": \"image_pull_failure\",\n  \"root_cause\": \"The uploader container failed to pull the required image due to an unauthorized authentication error.\",\n  \"evidence_ids\": [\"event-1\"],\n  \"explanation\": \"The event indicates that the uploader container failed to pull the image, resulting in a 401 Unauthorized error. This directly points to an image pull failure.\",\n  \"recommended_checks\": [\n    \"Verify the image URL and credentials for the uploader container.\",\n    \"Check the Kubernetes service account and role bindings for the uploader container.\"\n  ],\n  \"uncertain\": false\n}",
+        "prediction": {
+          "incident_id": "case-b98870b3ffb39c94c2b49ba2",
+          "category": "image_pull_failure",
+          "root_cause": "The uploader container failed to pull the required image due to an unauthorized authentication error.",
+          "evidence_ids": [
+            "event-1"
+          ],
+          "explanation": "The event indicates that the uploader container failed to pull the image, resulting in a 401 Unauthorized error. This directly points to an image pull failure.",
+          "recommended_checks": [
+            "Verify the image URL and credentials for the uploader container.",
+            "Check the Kubernetes service account and role bindings for the uploader container."
+          ],
+          "uncertain": false
+        },
+        "parse_errors": [],
+        "schema_errors": [],
+        "reference_errors": [],
+        "elapsed_seconds": 6.4416477880004095
+      },
+      "measurement": {
+        "incident_id": "case-b98870b3ffb39c94c2b49ba2",
+        "input_tokens": 591,
+        "output_tokens": 156,
+        "elapsed_seconds": 6.4416477880004095,
+        "generated_tokens_per_second": 24.217406032443897,
+        "peak_rss_bytes": 1795796992,
+        "process_lifetime_peak_rss_bytes": 4327968768,
+        "gpu_peak_allocated_bytes": 3550760448,
+        "gpu_peak_reserved_bytes": 3862953984,
+        "inference_error": null
+      }
+    },
+    {
+      "repetition": 3,
+      "record": {
+        "incident_id": "case-b9292bb1efe84e0e4cab3d61",
+        "run": {
+          "run_id": "qwen-70d244cc86cc-cd884b0af54c-4e7350234cdf",
+          "backend_id": "transformers/Qwen/Qwen3-1.7B",
+          "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "prompt_version": "zero-shot-v1",
+          "decoding_settings": {
+            "model_id": "Qwen/Qwen3-1.7B",
+            "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "dtype": "bfloat16",
+            "device": "cuda",
+            "attention": "sdpa",
+            "threads": 4,
+            "seed": 42,
+            "max_input_tokens": 16384,
+            "max_new_tokens": 512,
+            "do_sample": false,
+            "enable_thinking": false,
+            "prompt_version": "zero-shot-v1"
+          },
+          "seed": 42,
+          "dataset_sha256": "cd884b0af54cb97f66c34838192e4502e8aef597a532b5b9723ad5dbc7a03bbd",
+          "environment": {
+            "python": "3.12.13",
+            "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+            "cpu": "x86_64",
+            "torch": "2.7.1+cu128",
+            "transformers": "4.57.6",
+            "cuda_runtime": "12.8",
+            "threads": "4",
+            "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+            "precision": "bfloat16",
+            "attention": "sdpa",
+            "split": "benchmark-warm",
+            "prompt_sha256": "4e7350234cdff042a02020c4e55779a3f1b5224d8f4b0b51ec5fe81ed60872cb",
+            "inference_source_sha256": "7e29c1539a570c89c642044b6bf1fb8bcfa7cae82ef3e06ba57668ae5df86ad7"
+          }
+        },
+        "raw_response": "{\n  \"incident_id\": \"case-b9292bb1efe84e0e4cab3d61\",\n  \"category\": \"container_crash\",\n  \"root_cause\": \"The container 'api' in pod 'gateway-api-z6s3w' is failing to start due to a missing Secret 'app-auth-v1' in the namespace 'demo-app'. The pod is in phase 'Pending' with a 'CreateContainerConfigError' reason, indicating the container configuration is invalid or missing required resources.\",\n  \"evidence_ids\": [\"metadata-1\", \"metadata-2\", \"event-1\", \"status-1\"],\n  \"explanation\": \"The pod is in a 'Pending' state with a 'CreateContainerConfigError' because the required Secret 'app-auth-v1' is missing. The event confirms the Secret is not found, and the metadata indicates the container is using 'app-auth-v1' as a required environment variable. The pod's status shows the container is not started, which aligns with the container crash diagnosis.\",\n  \"recommended_checks\": [\n    \"Verify that the Secret 'app-auth-v1' exists in the 'demo-app' namespace.\",\n    \"Check the pod's configuration to ensure all required environment variables are correctly set.\",\n    \"Confirm that the 'app-auth-v1' Secret is not being deleted or replaced by a different Secret.\"\n  ],\n  \"uncertain\": false\n}",
+        "prediction": {
+          "incident_id": "case-b9292bb1efe84e0e4cab3d61",
+          "category": "container_crash",
+          "root_cause": "The container 'api' in pod 'gateway-api-z6s3w' is failing to start due to a missing Secret 'app-auth-v1' in the namespace 'demo-app'. The pod is in phase 'Pending' with a 'CreateContainerConfigError' reason, indicating the container configuration is invalid or missing required resources.",
+          "evidence_ids": [
+            "metadata-1",
+            "metadata-2",
+            "event-1",
+            "status-1"
+          ],
+          "explanation": "The pod is in a 'Pending' state with a 'CreateContainerConfigError' because the required Secret 'app-auth-v1' is missing. The event confirms the Secret is not found, and the metadata indicates the container is using 'app-auth-v1' as a required environment variable. The pod's status shows the container is not started, which aligns with the container crash diagnosis.",
+          "recommended_checks": [
+            "Verify that the Secret 'app-auth-v1' exists in the 'demo-app' namespace.",
+            "Check the pod's configuration to ensure all required environment variables are correctly set.",
+            "Confirm that the 'app-auth-v1' Secret is not being deleted or replaced by a different Secret."
+          ],
+          "uncertain": false
+        },
+        "parse_errors": [],
+        "schema_errors": [],
+        "reference_errors": [],
+        "elapsed_seconds": 12.218792194998969
+      },
+      "measurement": {
+        "incident_id": "case-b9292bb1efe84e0e4cab3d61",
+        "input_tokens": 811,
+        "output_tokens": 300,
+        "elapsed_seconds": 12.218792194998969,
+        "generated_tokens_per_second": 24.552344880927514,
+        "peak_rss_bytes": 1795796992,
+        "process_lifetime_peak_rss_bytes": 4327968768,
+        "gpu_peak_allocated_bytes": 3587765248,
+        "gpu_peak_reserved_bytes": 3862953984,
+        "inference_error": null
+      }
+    },
+    {
+      "repetition": 3,
+      "record": {
+        "incident_id": "case-8377ef5ecc2eead6dc52cfdd",
+        "run": {
+          "run_id": "qwen-70d244cc86cc-cd884b0af54c-4e7350234cdf",
+          "backend_id": "transformers/Qwen/Qwen3-1.7B",
+          "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "prompt_version": "zero-shot-v1",
+          "decoding_settings": {
+            "model_id": "Qwen/Qwen3-1.7B",
+            "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "dtype": "bfloat16",
+            "device": "cuda",
+            "attention": "sdpa",
+            "threads": 4,
+            "seed": 42,
+            "max_input_tokens": 16384,
+            "max_new_tokens": 512,
+            "do_sample": false,
+            "enable_thinking": false,
+            "prompt_version": "zero-shot-v1"
+          },
+          "seed": 42,
+          "dataset_sha256": "cd884b0af54cb97f66c34838192e4502e8aef597a532b5b9723ad5dbc7a03bbd",
+          "environment": {
+            "python": "3.12.13",
+            "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+            "cpu": "x86_64",
+            "torch": "2.7.1+cu128",
+            "transformers": "4.57.6",
+            "cuda_runtime": "12.8",
+            "threads": "4",
+            "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+            "precision": "bfloat16",
+            "attention": "sdpa",
+            "split": "benchmark-warm",
+            "prompt_sha256": "4e7350234cdff042a02020c4e55779a3f1b5224d8f4b0b51ec5fe81ed60872cb",
+            "inference_source_sha256": "7e29c1539a570c89c642044b6bf1fb8bcfa7cae82ef3e06ba57668ae5df86ad7"
+          }
+        },
+        "raw_response": "{\n  \"incident_id\": \"case-8377ef5ecc2eead6dc52cfdd\",\n  \"category\": \"oom_killed\",\n  \"root_cause\": \"The container jvm attempt 1 was terminated by OOMKilled, as the container's memory usage exceeded its limit.\",\n  \"evidence_ids\": [\"termination-1\", \"status-1\", \"metadata-1\", \"metadata-2\"],\n  \"explanation\": \"The logs show that the container was terminated due to OOMKilled, with the memory usage reaching the container's limit. The memory limit for the container is 268435456 bytes, and the memory peak is also 268435456 bytes, indicating that the container was unable to allocate more memory and was forcibly terminated.\",\n  \"recommended_checks\": [\n    \"Check the container's memory usage and ensure it does not exceed the allocated limit.\",\n    \"Verify the JVM memory settings and ensure they are appropriately configured for the workload.\",\n    \"Monitor the container's memory usage over time to identify any patterns or anomalies.\"\n  ],\n  \"uncertain\": false\n}",
+        "prediction": {
+          "incident_id": "case-8377ef5ecc2eead6dc52cfdd",
+          "category": "oom_killed",
+          "root_cause": "The container jvm attempt 1 was terminated by OOMKilled, as the container's memory usage exceeded its limit.",
+          "evidence_ids": [
+            "termination-1",
+            "status-1",
+            "metadata-1",
+            "metadata-2"
+          ],
+          "explanation": "The logs show that the container was terminated due to OOMKilled, with the memory usage reaching the container's limit. The memory limit for the container is 268435456 bytes, and the memory peak is also 268435456 bytes, indicating that the container was unable to allocate more memory and was forcibly terminated.",
+          "recommended_checks": [
+            "Check the container's memory usage and ensure it does not exceed the allocated limit.",
+            "Verify the JVM memory settings and ensure they are appropriately configured for the workload.",
+            "Monitor the container's memory usage over time to identify any patterns or anomalies."
+          ],
+          "uncertain": false
+        },
+        "parse_errors": [],
+        "schema_errors": [],
+        "reference_errors": [],
+        "elapsed_seconds": 10.144098811997537
+      },
+      "measurement": {
+        "incident_id": "case-8377ef5ecc2eead6dc52cfdd",
+        "input_tokens": 1864,
+        "output_tokens": 245,
+        "elapsed_seconds": 10.144098811997537,
+        "generated_tokens_per_second": 24.15197293920637,
+        "peak_rss_bytes": 1795796992,
+        "process_lifetime_peak_rss_bytes": 4327968768,
+        "gpu_peak_allocated_bytes": 3766519296,
+        "gpu_peak_reserved_bytes": 3862953984,
+        "inference_error": null
+      }
+    },
+    {
+      "repetition": 3,
+      "record": {
+        "incident_id": "case-1c92f568302ee68d87cb7945",
+        "run": {
+          "run_id": "qwen-70d244cc86cc-cd884b0af54c-4e7350234cdf",
+          "backend_id": "transformers/Qwen/Qwen3-1.7B",
+          "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "prompt_version": "zero-shot-v1",
+          "decoding_settings": {
+            "model_id": "Qwen/Qwen3-1.7B",
+            "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "dtype": "bfloat16",
+            "device": "cuda",
+            "attention": "sdpa",
+            "threads": 4,
+            "seed": 42,
+            "max_input_tokens": 16384,
+            "max_new_tokens": 512,
+            "do_sample": false,
+            "enable_thinking": false,
+            "prompt_version": "zero-shot-v1"
+          },
+          "seed": 42,
+          "dataset_sha256": "cd884b0af54cb97f66c34838192e4502e8aef597a532b5b9723ad5dbc7a03bbd",
+          "environment": {
+            "python": "3.12.13",
+            "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+            "cpu": "x86_64",
+            "torch": "2.7.1+cu128",
+            "transformers": "4.57.6",
+            "cuda_runtime": "12.8",
+            "threads": "4",
+            "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+            "precision": "bfloat16",
+            "attention": "sdpa",
+            "split": "benchmark-warm",
+            "prompt_sha256": "4e7350234cdff042a02020c4e55779a3f1b5224d8f4b0b51ec5fe81ed60872cb",
+            "inference_source_sha256": "7e29c1539a570c89c642044b6bf1fb8bcfa7cae82ef3e06ba57668ae5df86ad7"
+          }
+        },
+        "raw_response": "{\n  \"incident_id\": \"case-1c92f568302ee68d87cb7945\",\n  \"category\": \"container_crash\",\n  \"root_cause\": \"Liveness probe failed: context deadline exceeded (Client.Timeout exceeded while awaiting headers). The probe failed repeatedly, leading to the container being marked as unhealthy and restarted.\",\n  \"evidence_ids\": [\"event-1\", \"event-2\", \"event-3\", \"event-kill\", \"termination-1\", \"status-1\"],\n  \"explanation\": \"The liveness probe failed three times, causing the container to be marked as unhealthy and restarted. The probe failed due to a context deadline exceeded error, which indicates that the probe was unable to complete its request within the allowed time frame. This led to the container being terminated and restarted, resulting in a CrashLoopBackOff state.\",\n  \"recommended_checks\": [\n    \"Check the liveness probe configuration to ensure it is correctly set up and configured for the target service.\",\n    \"Verify the network connectivity and availability of the target service (e.g., the HTTP endpoint at port 8080).\",\n    \"Check the container logs for more detailed error messages related to the liveness probe failure.\"\n  ],\n  \"uncertain\": false\n}",
+        "prediction": {
+          "incident_id": "case-1c92f568302ee68d87cb7945",
+          "category": "container_crash",
+          "root_cause": "Liveness probe failed: context deadline exceeded (Client.Timeout exceeded while awaiting headers). The probe failed repeatedly, leading to the container being marked as unhealthy and restarted.",
+          "evidence_ids": [
+            "event-1",
+            "event-2",
+            "event-3",
+            "event-kill",
+            "termination-1",
+            "status-1"
+          ],
+          "explanation": "The liveness probe failed three times, causing the container to be marked as unhealthy and restarted. The probe failed due to a context deadline exceeded error, which indicates that the probe was unable to complete its request within the allowed time frame. This led to the container being terminated and restarted, resulting in a CrashLoopBackOff state.",
+          "recommended_checks": [
+            "Check the liveness probe configuration to ensure it is correctly set up and configured for the target service.",
+            "Verify the network connectivity and availability of the target service (e.g., the HTTP endpoint at port 8080).",
+            "Check the container logs for more detailed error messages related to the liveness probe failure."
+          ],
+          "uncertain": false
+        },
+        "parse_errors": [],
+        "schema_errors": [],
+        "reference_errors": [],
+        "elapsed_seconds": 11.125676067000313
+      },
+      "measurement": {
+        "incident_id": "case-1c92f568302ee68d87cb7945",
+        "input_tokens": 1641,
+        "output_tokens": 274,
+        "elapsed_seconds": 11.125676067000313,
+        "generated_tokens_per_second": 24.62771685513179,
+        "peak_rss_bytes": 1795796992,
+        "process_lifetime_peak_rss_bytes": 4327968768,
+        "gpu_peak_allocated_bytes": 3728314880,
+        "gpu_peak_reserved_bytes": 3862953984,
+        "inference_error": null
+      }
+    },
+    {
+      "repetition": 3,
+      "record": {
+        "incident_id": "case-87ae3b409657fb6d37cdbc7f",
+        "run": {
+          "run_id": "qwen-70d244cc86cc-cd884b0af54c-4e7350234cdf",
+          "backend_id": "transformers/Qwen/Qwen3-1.7B",
+          "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "prompt_version": "zero-shot-v1",
+          "decoding_settings": {
+            "model_id": "Qwen/Qwen3-1.7B",
+            "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "dtype": "bfloat16",
+            "device": "cuda",
+            "attention": "sdpa",
+            "threads": 4,
+            "seed": 42,
+            "max_input_tokens": 16384,
+            "max_new_tokens": 512,
+            "do_sample": false,
+            "enable_thinking": false,
+            "prompt_version": "zero-shot-v1"
+          },
+          "seed": 42,
+          "dataset_sha256": "cd884b0af54cb97f66c34838192e4502e8aef597a532b5b9723ad5dbc7a03bbd",
+          "environment": {
+            "python": "3.12.13",
+            "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+            "cpu": "x86_64",
+            "torch": "2.7.1+cu128",
+            "transformers": "4.57.6",
+            "cuda_runtime": "12.8",
+            "threads": "4",
+            "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+            "precision": "bfloat16",
+            "attention": "sdpa",
+            "split": "benchmark-warm",
+            "prompt_sha256": "4e7350234cdff042a02020c4e55779a3f1b5224d8f4b0b51ec5fe81ed60872cb",
+            "inference_source_sha256": "7e29c1539a570c89c642044b6bf1fb8bcfa7cae82ef3e06ba57668ae5df86ad7"
+          }
+        },
+        "raw_response": "{\n  \"incident_id\": \"case-87ae3b409657fb6d37cdbc7f\",\n  \"category\": \"scheduling_failure\",\n  \"root_cause\": \"The pod vision-worker-p1j8w could not be scheduled due to insufficient NVIDIA GPU resources on the nodes, as indicated by the event '0/2 nodes are available: 2 Insufficient nvidia.com/gpu.'\",\n  \"evidence_ids\": [\"event-1\", \"status-1\"],\n  \"explanation\": \"The pod was in a Pending state with the reason 'Unschedulable' because the nodes lacked the required NVIDIA GPU resources, preventing the pod from being scheduled. The event explicitly states that two nodes are insufficient for the GPU requirement, and the status confirms the pod was not scheduled.\",\n  \"recommended_checks\": [\n    \"Verify the GPU requirements and available resources on the nodes.\",\n    \"Check if the GPU resource claim in the pod specification is correctly set.\",\n    \"Ensure that the NVIDIA GPU driver is properly installed and configured on the nodes.\"\n  ],\n  \"uncertain\": false\n}",
+        "prediction": {
+          "incident_id": "case-87ae3b409657fb6d37cdbc7f",
+          "category": "scheduling_failure",
+          "root_cause": "The pod vision-worker-p1j8w could not be scheduled due to insufficient NVIDIA GPU resources on the nodes, as indicated by the event '0/2 nodes are available: 2 Insufficient nvidia.com/gpu.'",
+          "evidence_ids": [
+            "event-1",
+            "status-1"
+          ],
+          "explanation": "The pod was in a Pending state with the reason 'Unschedulable' because the nodes lacked the required NVIDIA GPU resources, preventing the pod from being scheduled. The event explicitly states that two nodes are insufficient for the GPU requirement, and the status confirms the pod was not scheduled.",
+          "recommended_checks": [
+            "Verify the GPU requirements and available resources on the nodes.",
+            "Check if the GPU resource claim in the pod specification is correctly set.",
+            "Ensure that the NVIDIA GPU driver is properly installed and configured on the nodes."
+          ],
+          "uncertain": false
+        },
+        "parse_errors": [],
+        "schema_errors": [],
+        "reference_errors": [],
+        "elapsed_seconds": 9.383427427001152
+      },
+      "measurement": {
+        "incident_id": "case-87ae3b409657fb6d37cdbc7f",
+        "input_tokens": 1275,
+        "output_tokens": 235,
+        "elapsed_seconds": 9.383427427001152,
+        "generated_tokens_per_second": 25.044153836984872,
+        "peak_rss_bytes": 1795796992,
+        "process_lifetime_peak_rss_bytes": 4327968768,
+        "gpu_peak_allocated_bytes": 3665588736,
+        "gpu_peak_reserved_bytes": 3862953984,
+        "inference_error": null
+      }
+    }
+  ]
+}

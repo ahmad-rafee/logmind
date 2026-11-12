@@ -1,0 +1,39 @@
+{
+  "run_id": "qwen-70d244cc86cc-80ee3bf10203-4e7350234cdf",
+  "backend_id": "transformers/Qwen/Qwen3-1.7B",
+  "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+  "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+  "prompt_version": "zero-shot-v1",
+  "decoding_settings": {
+    "model_id": "Qwen/Qwen3-1.7B",
+    "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+    "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+    "dtype": "bfloat16",
+    "device": "cuda",
+    "attention": "sdpa",
+    "threads": 4,
+    "seed": 42,
+    "max_input_tokens": 16384,
+    "max_new_tokens": 512,
+    "do_sample": false,
+    "enable_thinking": false,
+    "prompt_version": "zero-shot-v1"
+  },
+  "seed": 42,
+  "dataset_sha256": "80ee3bf10203c44a11f8afdb61c226d18f47cd30e9e1289b3404b02d97084c86",
+  "environment": {
+    "python": "3.12.13",
+    "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+    "cpu": "x86_64",
+    "torch": "2.7.1+cu128",
+    "transformers": "4.57.6",
+    "cuda_runtime": "12.8",
+    "threads": "4",
+    "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+    "precision": "bfloat16",
+    "attention": "sdpa",
+    "split": "test",
+    "prompt_sha256": "4e7350234cdff042a02020c4e55779a3f1b5224d8f4b0b51ec5fe81ed60872cb",
+    "inference_source_sha256": "7e29c1539a570c89c642044b6bf1fb8bcfa7cae82ef3e06ba57668ae5df86ad7"
+  }
+}

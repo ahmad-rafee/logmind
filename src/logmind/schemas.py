@@ -14,6 +14,7 @@ Category = Literal[
     "scheduling_failure",
     "insufficient_evidence",
 ]
+Sha256 = Annotated[str, Field(pattern=r"^[0-9a-f]{64}$")]
 
 
 class StrictModel(BaseModel):
@@ -126,3 +127,37 @@ class PredictionRecord(StrictModel):
             if self.prediction.incident_id != self.incident_id:
                 raise ValueError("Envelope and prediction incident IDs differ")
         return self
+
+
+class DatasetFile(StrictModel):
+    sha256: Sha256
+    records: Annotated[int, Field(ge=0)]
+
+
+class DatasetManifest(StrictModel):
+    format_version: Literal[1]
+    status: Literal["candidate"]
+    generator_version: Text
+    generator_sha256: Sha256
+    templates_sha256: Sha256
+    seed: int
+    records: int
+    scenarios: int
+    records_by_split: dict[str, int]
+    scenarios_by_split: dict[str, int]
+    scenarios_by_category: dict[str, int]
+    records_by_category: dict[str, int]
+    records_by_variant: dict[str, int]
+    files: dict[str, DatasetFile]
+
+
+class FrozenDatasetManifest(StrictModel):
+    format_version: Literal[1]
+    status: Literal["frozen"]
+    dataset_version: Text
+    frozen_at_utc: Text
+    candidate_manifest_sha256: Sha256
+    candidate: DatasetManifest
+    audit_checks: list[Text]
+    environment: dict[str, Text]
+    artifacts: dict[str, Sha256]

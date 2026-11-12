@@ -1,0 +1,24 @@
+{
+  "reviewed_predictions": 14,
+  "unsupported_factual_claims": 9,
+  "reviewed_hallucination_rate": 0.6428571428571429,
+  "support_ratings": {
+    "partially_supported": 9,
+    "supported": 3,
+    "unsupported": 2
+  },
+  "relevant_recommendations": 12,
+  "safe_recommendations": 14,
+  "reviewers": [
+    "Codex"
+  ],
+  "reviewer_types": [
+    "agent"
+  ],
+  "review_dates": [
+    "2026-11-12"
+  ],
+  "sample_sha256": "af9d8cbacc51a90daad4064acf3e83bcc7e3f12db7c218d2f00c1dccdad3fbf2",
+  "completed_review_sha256": "295e1bcccdb2022923d1a1dc9d0bde0a59e8e26250ab82a434ad7c28631db267",
+  "limitations": "Single-reviewer results when only one identity is listed. Agent review is not independent human review. This unweighted stratified sample intentionally includes invalid/abstained outputs and correlated synthetic variants; its rate is not an unbiased production estimate."
+}

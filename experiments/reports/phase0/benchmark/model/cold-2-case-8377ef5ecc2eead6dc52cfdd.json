@@ -1,0 +1,127 @@
+{
+  "backend": "model",
+  "mode": "cold",
+  "run": {
+    "run_id": "qwen-70d244cc86cc-cd884b0af54c-4e7350234cdf",
+    "backend_id": "transformers/Qwen/Qwen3-1.7B",
+    "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+    "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+    "prompt_version": "zero-shot-v1",
+    "decoding_settings": {
+      "model_id": "Qwen/Qwen3-1.7B",
+      "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+      "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+      "dtype": "bfloat16",
+      "device": "cuda",
+      "attention": "sdpa",
+      "threads": 4,
+      "seed": 42,
+      "max_input_tokens": 16384,
+      "max_new_tokens": 512,
+      "do_sample": false,
+      "enable_thinking": false,
+      "prompt_version": "zero-shot-v1"
+    },
+    "seed": 42,
+    "dataset_sha256": "cd884b0af54cb97f66c34838192e4502e8aef597a532b5b9723ad5dbc7a03bbd",
+    "environment": {
+      "python": "3.12.13",
+      "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+      "cpu": "x86_64",
+      "torch": "2.7.1+cu128",
+      "transformers": "4.57.6",
+      "cuda_runtime": "12.8",
+      "threads": "4",
+      "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+      "precision": "bfloat16",
+      "attention": "sdpa",
+      "split": "benchmark-cold",
+      "prompt_sha256": "4e7350234cdff042a02020c4e55779a3f1b5224d8f4b0b51ec5fe81ed60872cb",
+      "inference_source_sha256": "7e29c1539a570c89c642044b6bf1fb8bcfa7cae82ef3e06ba57668ae5df86ad7"
+    }
+  },
+  "warmup": null,
+  "results": [
+    {
+      "repetition": 1,
+      "record": {
+        "incident_id": "case-8377ef5ecc2eead6dc52cfdd",
+        "run": {
+          "run_id": "qwen-70d244cc86cc-cd884b0af54c-4e7350234cdf",
+          "backend_id": "transformers/Qwen/Qwen3-1.7B",
+          "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "prompt_version": "zero-shot-v1",
+          "decoding_settings": {
+            "model_id": "Qwen/Qwen3-1.7B",
+            "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "dtype": "bfloat16",
+            "device": "cuda",
+            "attention": "sdpa",
+            "threads": 4,
+            "seed": 42,
+            "max_input_tokens": 16384,
+            "max_new_tokens": 512,
+            "do_sample": false,
+            "enable_thinking": false,
+            "prompt_version": "zero-shot-v1"
+          },
+          "seed": 42,
+          "dataset_sha256": "cd884b0af54cb97f66c34838192e4502e8aef597a532b5b9723ad5dbc7a03bbd",
+          "environment": {
+            "python": "3.12.13",
+            "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+            "cpu": "x86_64",
+            "torch": "2.7.1+cu128",
+            "transformers": "4.57.6",
+            "cuda_runtime": "12.8",
+            "threads": "4",
+            "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+            "precision": "bfloat16",
+            "attention": "sdpa",
+            "split": "benchmark-cold",
+            "prompt_sha256": "4e7350234cdff042a02020c4e55779a3f1b5224d8f4b0b51ec5fe81ed60872cb",
+            "inference_source_sha256": "7e29c1539a570c89c642044b6bf1fb8bcfa7cae82ef3e06ba57668ae5df86ad7"
+          }
+        },
+        "raw_response": "{\n  \"incident_id\": \"case-8377ef5ecc2eead6dc52cfdd\",\n  \"category\": \"oom_killed\",\n  \"root_cause\": \"The container jvm attempt 1 was terminated by OOMKilled, as the container's memory usage exceeded its limit.\",\n  \"evidence_ids\": [\"termination-1\", \"status-1\", \"metadata-1\", \"metadata-2\"],\n  \"explanation\": \"The logs show that the container was terminated due to OOMKilled, with the memory usage reaching the container's limit. The memory limit for the container is 268435456 bytes, and the memory peak is also 268435456 bytes, indicating that the container was unable to allocate more memory and was forcibly terminated.\",\n  \"recommended_checks\": [\n    \"Check the container's memory usage and ensure it does not exceed the allocated limit.\",\n    \"Verify the JVM memory settings and ensure they are appropriately configured for the workload.\",\n    \"Monitor the container's memory usage over time to identify any patterns or anomalies.\"\n  ],\n  \"uncertain\": false\n}",
+        "prediction": {
+          "incident_id": "case-8377ef5ecc2eead6dc52cfdd",
+          "category": "oom_killed",
+          "root_cause": "The container jvm attempt 1 was terminated by OOMKilled, as the container's memory usage exceeded its limit.",
+          "evidence_ids": [
+            "termination-1",
+            "status-1",
+            "metadata-1",
+            "metadata-2"
+          ],
+          "explanation": "The logs show that the container was terminated due to OOMKilled, with the memory usage reaching the container's limit. The memory limit for the container is 268435456 bytes, and the memory peak is also 268435456 bytes, indicating that the container was unable to allocate more memory and was forcibly terminated.",
+          "recommended_checks": [
+            "Check the container's memory usage and ensure it does not exceed the allocated limit.",
+            "Verify the JVM memory settings and ensure they are appropriately configured for the workload.",
+            "Monitor the container's memory usage over time to identify any patterns or anomalies."
+          ],
+          "uncertain": false
+        },
+        "parse_errors": [],
+        "schema_errors": [],
+        "reference_errors": [],
+        "elapsed_seconds": 13.118194138001854
+      },
+      "measurement": {
+        "incident_id": "case-8377ef5ecc2eead6dc52cfdd",
+        "input_tokens": 1864,
+        "output_tokens": 245,
+        "elapsed_seconds": 18.617346718998306,
+        "generated_tokens_per_second": 13.159769955295868,
+        "peak_rss_bytes": 4327907328,
+        "process_lifetime_peak_rss_bytes": 4327907328,
+        "gpu_peak_allocated_bytes": 3767666176,
+        "gpu_peak_reserved_bytes": 3821010944,
+        "inference_error": null,
+        "prediction_elapsed_seconds": 13.118194138001854
+      }
+    }
+  ]
+}

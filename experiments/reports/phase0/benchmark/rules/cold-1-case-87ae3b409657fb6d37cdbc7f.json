@@ -1,0 +1,70 @@
+{
+  "backend": "rules",
+  "mode": "cold",
+  "run": {
+    "run_id": "rules-benchmark",
+    "backend_id": "rules",
+    "revision": "455e661f8bb034a21f4e9f634faa8061230e159cd1bd8925a9af3314c2d52a0a",
+    "tokenizer_revision": null,
+    "prompt_version": "rules-v1-no-prompt",
+    "decoding_settings": {},
+    "seed": 42,
+    "dataset_sha256": "cd884b0af54cb97f66c34838192e4502e8aef597a532b5b9723ad5dbc7a03bbd",
+    "environment": {
+      "python": "3.12.13"
+    }
+  },
+  "warmup": null,
+  "results": [
+    {
+      "repetition": 1,
+      "record": {
+        "incident_id": "case-87ae3b409657fb6d37cdbc7f",
+        "run": {
+          "run_id": "rules-benchmark",
+          "backend_id": "rules",
+          "revision": "455e661f8bb034a21f4e9f634faa8061230e159cd1bd8925a9af3314c2d52a0a",
+          "tokenizer_revision": null,
+          "prompt_version": "rules-v1-no-prompt",
+          "decoding_settings": {},
+          "seed": 42,
+          "dataset_sha256": "cd884b0af54cb97f66c34838192e4502e8aef597a532b5b9723ad5dbc7a03bbd",
+          "environment": {
+            "python": "3.12.13"
+          }
+        },
+        "raw_response": "{\"incident_id\":\"case-87ae3b409657fb6d37cdbc7f\",\"category\":\"scheduling_failure\",\"root_cause\":\"The scheduler could not place the pod under the supplied resource or placement constraints.\",\"evidence_ids\":[\"event-1\"],\"explanation\":\"Supplied observations: 0/2 nodes are available: 2 Insufficient nvidia.com/gpu.\",\"recommended_checks\":[\"Inspect effective requests and hard placement constraints against the node inventory without modifying workloads or nodes.\"],\"uncertain\":false}",
+        "prediction": {
+          "incident_id": "case-87ae3b409657fb6d37cdbc7f",
+          "category": "scheduling_failure",
+          "root_cause": "The scheduler could not place the pod under the supplied resource or placement constraints.",
+          "evidence_ids": [
+            "event-1"
+          ],
+          "explanation": "Supplied observations: 0/2 nodes are available: 2 Insufficient nvidia.com/gpu.",
+          "recommended_checks": [
+            "Inspect effective requests and hard placement constraints against the node inventory without modifying workloads or nodes."
+          ],
+          "uncertain": false
+        },
+        "parse_errors": [],
+        "schema_errors": [],
+        "reference_errors": [],
+        "elapsed_seconds": 0.00996407699858537
+      },
+      "measurement": {
+        "incident_id": "case-87ae3b409657fb6d37cdbc7f",
+        "input_tokens": null,
+        "output_tokens": null,
+        "elapsed_seconds": 0.1354308019981545,
+        "generated_tokens_per_second": null,
+        "peak_rss_bytes": 41742336,
+        "process_lifetime_peak_rss_bytes": 41742336,
+        "gpu_peak_allocated_bytes": null,
+        "gpu_peak_reserved_bytes": null,
+        "inference_error": null,
+        "prediction_elapsed_seconds": 0.00996407699858537
+      }
+    }
+  ]
+}

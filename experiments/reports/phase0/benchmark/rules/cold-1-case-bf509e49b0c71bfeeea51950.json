@@ -1,0 +1,71 @@
+{
+  "backend": "rules",
+  "mode": "cold",
+  "run": {
+    "run_id": "rules-benchmark",
+    "backend_id": "rules",
+    "revision": "455e661f8bb034a21f4e9f634faa8061230e159cd1bd8925a9af3314c2d52a0a",
+    "tokenizer_revision": null,
+    "prompt_version": "rules-v1-no-prompt",
+    "decoding_settings": {},
+    "seed": 42,
+    "dataset_sha256": "cd884b0af54cb97f66c34838192e4502e8aef597a532b5b9723ad5dbc7a03bbd",
+    "environment": {
+      "python": "3.12.13"
+    }
+  },
+  "warmup": null,
+  "results": [
+    {
+      "repetition": 1,
+      "record": {
+        "incident_id": "case-bf509e49b0c71bfeeea51950",
+        "run": {
+          "run_id": "rules-benchmark",
+          "backend_id": "rules",
+          "revision": "455e661f8bb034a21f4e9f634faa8061230e159cd1bd8925a9af3314c2d52a0a",
+          "tokenizer_revision": null,
+          "prompt_version": "rules-v1-no-prompt",
+          "decoding_settings": {},
+          "seed": 42,
+          "dataset_sha256": "cd884b0af54cb97f66c34838192e4502e8aef597a532b5b9723ad5dbc7a03bbd",
+          "environment": {
+            "python": "3.12.13"
+          }
+        },
+        "raw_response": "{\"incident_id\":\"case-bf509e49b0c71bfeeea51950\",\"category\":\"container_crash\",\"root_cause\":\"The selected application process exited unsuccessfully with an application error in the supplied diagnostics.\",\"evidence_ids\":[\"log-2\",\"termination-1\"],\"explanation\":\"Supplied observations: 2026-10-19T09:00:03Z worker[attempt=1] ModuleNotFoundError: No module named 'parcel_codec'; unhandled startup exception, exiting with code 1. | Container worker attempt 1 terminated: reason=Error, exitCode=1, startedAt=2026-10-19T09:00:01Z, finishedAt=2026-10-19T09:00:04Z.\",\"recommended_checks\":[\"Inspect the selected attempt's application error and termination details without rerunning or repairing the workload.\"],\"uncertain\":false}",
+        "prediction": {
+          "incident_id": "case-bf509e49b0c71bfeeea51950",
+          "category": "container_crash",
+          "root_cause": "The selected application process exited unsuccessfully with an application error in the supplied diagnostics.",
+          "evidence_ids": [
+            "log-2",
+            "termination-1"
+          ],
+          "explanation": "Supplied observations: 2026-10-19T09:00:03Z worker[attempt=1] ModuleNotFoundError: No module named 'parcel_codec'; unhandled startup exception, exiting with code 1. | Container worker attempt 1 terminated: reason=Error, exitCode=1, startedAt=2026-10-19T09:00:01Z, finishedAt=2026-10-19T09:00:04Z.",
+          "recommended_checks": [
+            "Inspect the selected attempt's application error and termination details without rerunning or repairing the workload."
+          ],
+          "uncertain": false
+        },
+        "parse_errors": [],
+        "schema_errors": [],
+        "reference_errors": [],
+        "elapsed_seconds": 0.009194278998620575
+      },
+      "measurement": {
+        "incident_id": "case-bf509e49b0c71bfeeea51950",
+        "input_tokens": null,
+        "output_tokens": null,
+        "elapsed_seconds": 0.12256601600165595,
+        "generated_tokens_per_second": null,
+        "peak_rss_bytes": 41742336,
+        "process_lifetime_peak_rss_bytes": 41742336,
+        "gpu_peak_allocated_bytes": null,
+        "gpu_peak_reserved_bytes": null,
+        "inference_error": null,
+        "prediction_elapsed_seconds": 0.009194278998620575
+      }
+    }
+  ]
+}

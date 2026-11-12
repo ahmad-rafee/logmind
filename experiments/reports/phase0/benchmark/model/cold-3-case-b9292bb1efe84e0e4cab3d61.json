@@ -1,0 +1,127 @@
+{
+  "backend": "model",
+  "mode": "cold",
+  "run": {
+    "run_id": "qwen-70d244cc86cc-cd884b0af54c-4e7350234cdf",
+    "backend_id": "transformers/Qwen/Qwen3-1.7B",
+    "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+    "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+    "prompt_version": "zero-shot-v1",
+    "decoding_settings": {
+      "model_id": "Qwen/Qwen3-1.7B",
+      "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+      "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+      "dtype": "bfloat16",
+      "device": "cuda",
+      "attention": "sdpa",
+      "threads": 4,
+      "seed": 42,
+      "max_input_tokens": 16384,
+      "max_new_tokens": 512,
+      "do_sample": false,
+      "enable_thinking": false,
+      "prompt_version": "zero-shot-v1"
+    },
+    "seed": 42,
+    "dataset_sha256": "cd884b0af54cb97f66c34838192e4502e8aef597a532b5b9723ad5dbc7a03bbd",
+    "environment": {
+      "python": "3.12.13",
+      "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+      "cpu": "x86_64",
+      "torch": "2.7.1+cu128",
+      "transformers": "4.57.6",
+      "cuda_runtime": "12.8",
+      "threads": "4",
+      "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+      "precision": "bfloat16",
+      "attention": "sdpa",
+      "split": "benchmark-cold",
+      "prompt_sha256": "4e7350234cdff042a02020c4e55779a3f1b5224d8f4b0b51ec5fe81ed60872cb",
+      "inference_source_sha256": "7e29c1539a570c89c642044b6bf1fb8bcfa7cae82ef3e06ba57668ae5df86ad7"
+    }
+  },
+  "warmup": null,
+  "results": [
+    {
+      "repetition": 1,
+      "record": {
+        "incident_id": "case-b9292bb1efe84e0e4cab3d61",
+        "run": {
+          "run_id": "qwen-70d244cc86cc-cd884b0af54c-4e7350234cdf",
+          "backend_id": "transformers/Qwen/Qwen3-1.7B",
+          "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+          "prompt_version": "zero-shot-v1",
+          "decoding_settings": {
+            "model_id": "Qwen/Qwen3-1.7B",
+            "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "tokenizer_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+            "dtype": "bfloat16",
+            "device": "cuda",
+            "attention": "sdpa",
+            "threads": 4,
+            "seed": 42,
+            "max_input_tokens": 16384,
+            "max_new_tokens": 512,
+            "do_sample": false,
+            "enable_thinking": false,
+            "prompt_version": "zero-shot-v1"
+          },
+          "seed": 42,
+          "dataset_sha256": "cd884b0af54cb97f66c34838192e4502e8aef597a532b5b9723ad5dbc7a03bbd",
+          "environment": {
+            "python": "3.12.13",
+            "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+            "cpu": "x86_64",
+            "torch": "2.7.1+cu128",
+            "transformers": "4.57.6",
+            "cuda_runtime": "12.8",
+            "threads": "4",
+            "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+            "precision": "bfloat16",
+            "attention": "sdpa",
+            "split": "benchmark-cold",
+            "prompt_sha256": "4e7350234cdff042a02020c4e55779a3f1b5224d8f4b0b51ec5fe81ed60872cb",
+            "inference_source_sha256": "7e29c1539a570c89c642044b6bf1fb8bcfa7cae82ef3e06ba57668ae5df86ad7"
+          }
+        },
+        "raw_response": "{\n  \"incident_id\": \"case-b9292bb1efe84e0e4cab3d61\",\n  \"category\": \"container_crash\",\n  \"root_cause\": \"The container 'api' in pod 'gateway-api-z6s3w' is failing to start due to a missing Secret 'app-auth-v1' in the namespace 'demo-app'. The pod is in phase 'Pending' with a 'CreateContainerConfigError' reason, indicating the container configuration is invalid or missing required resources.\",\n  \"evidence_ids\": [\"metadata-1\", \"metadata-2\", \"event-1\", \"status-1\"],\n  \"explanation\": \"The pod is in a 'Pending' state with a 'CreateContainerConfigError' because the required Secret 'app-auth-v1' is missing. The event confirms the Secret is not found, and the metadata indicates the container is using 'app-auth-v1' as a required environment variable. The pod's status shows the container is not started, which aligns with the container crash diagnosis.\",\n  \"recommended_checks\": [\n    \"Verify that the Secret 'app-auth-v1' exists in the 'demo-app' namespace.\",\n    \"Check the pod's configuration to ensure all required environment variables are correctly set.\",\n    \"Confirm that the 'app-auth-v1' Secret is not being deleted or replaced by a different Secret.\"\n  ],\n  \"uncertain\": false\n}",
+        "prediction": {
+          "incident_id": "case-b9292bb1efe84e0e4cab3d61",
+          "category": "container_crash",
+          "root_cause": "The container 'api' in pod 'gateway-api-z6s3w' is failing to start due to a missing Secret 'app-auth-v1' in the namespace 'demo-app'. The pod is in phase 'Pending' with a 'CreateContainerConfigError' reason, indicating the container configuration is invalid or missing required resources.",
+          "evidence_ids": [
+            "metadata-1",
+            "metadata-2",
+            "event-1",
+            "status-1"
+          ],
+          "explanation": "The pod is in a 'Pending' state with a 'CreateContainerConfigError' because the required Secret 'app-auth-v1' is missing. The event confirms the Secret is not found, and the metadata indicates the container is using 'app-auth-v1' as a required environment variable. The pod's status shows the container is not started, which aligns with the container crash diagnosis.",
+          "recommended_checks": [
+            "Verify that the Secret 'app-auth-v1' exists in the 'demo-app' namespace.",
+            "Check the pod's configuration to ensure all required environment variables are correctly set.",
+            "Confirm that the 'app-auth-v1' Secret is not being deleted or replaced by a different Secret."
+          ],
+          "uncertain": false
+        },
+        "parse_errors": [],
+        "schema_errors": [],
+        "reference_errors": [],
+        "elapsed_seconds": 14.523343002001639
+      },
+      "measurement": {
+        "incident_id": "case-b9292bb1efe84e0e4cab3d61",
+        "input_tokens": 811,
+        "output_tokens": 300,
+        "elapsed_seconds": 20.02346663500066,
+        "generated_tokens_per_second": 14.982420650158819,
+        "peak_rss_bytes": 4328103936,
+        "process_lifetime_peak_rss_bytes": 4328103936,
+        "gpu_peak_allocated_bytes": 3590886400,
+        "gpu_peak_reserved_bytes": 3621781504,
+        "inference_error": null,
+        "prediction_elapsed_seconds": 14.523343002001639
+      }
+    }
+  ]
+}

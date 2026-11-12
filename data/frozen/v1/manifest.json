@@ -1,0 +1,142 @@
+{
+  "format_version": 1,
+  "status": "frozen",
+  "dataset_version": "v1",
+  "frozen_at_utc": "2026-11-12T20:28:43.003325+00:00",
+  "candidate_manifest_sha256": "13fc70dc3cc0be7ce4d55792abcebf7e30ddb848db8beea0357b4195930d22ba",
+  "candidate": {
+    "format_version": 1,
+    "status": "candidate",
+    "generator_version": "1",
+    "generator_sha256": "778863460e1299257cbfe779d2a4ad28a8504fe7067b447727d3eb30d26f17c8",
+    "templates_sha256": "8df727081e22e28f783c24fbed27db78c92a08acf124a8b23a1ef369d3f0a5a1",
+    "seed": 42,
+    "records": 150,
+    "scenarios": 42,
+    "records_by_split": {
+      "train": 50,
+      "validation": 50,
+      "test": 50
+    },
+    "scenarios_by_split": {
+      "test": 14,
+      "train": 14,
+      "validation": 14
+    },
+    "scenarios_by_category": {
+      "container_crash": 6,
+      "image_pull_failure": 6,
+      "insufficient_evidence": 6,
+      "missing_config": 6,
+      "oom_killed": 6,
+      "probe_failure": 6,
+      "scheduling_failure": 6
+    },
+    "records_by_category": {
+      "container_crash": 24,
+      "image_pull_failure": 24,
+      "insufficient_evidence": 6,
+      "missing_config": 24,
+      "oom_killed": 24,
+      "probe_failure": 24,
+      "scheduling_failure": 24
+    },
+    "records_by_variant": {
+      "baseline": 42,
+      "long": 36,
+      "noisy": 36,
+      "wording": 36
+    },
+    "files": {
+      "incidents.jsonl": {
+        "sha256": "3a983c12e97983ae40912ac7eb65c7c8278b79be33da62ca50a4f2b1e2d154f6",
+        "records": 150
+      },
+      "train.jsonl": {
+        "sha256": "3b52220554477992a3919c1c9e8dea771fe42a9ba862f156a2e826f51afdfa32",
+        "records": 50
+      },
+      "validation.jsonl": {
+        "sha256": "05ec83ee5e99ea8edc1efb9fd3671ffc66f6dbc02ef9e38306b7574a4095e34c",
+        "records": 50
+      },
+      "test.jsonl": {
+        "sha256": "80ee3bf10203c44a11f8afdb61c226d18f47cd30e9e1289b3404b02d97084c86",
+        "records": 50
+      }
+    }
+  },
+  "audit_checks": [
+    "Strict incident schemas and gold evidence references",
+    "Unique incident IDs and scenario split isolation",
+    "Combined and split files contain identical corresponding records",
+    "Record, scenario, category, and variant counts match the candidate manifest",
+    "All candidate bytes reproduce with the recorded seed and current reviewed templates",
+    "Frozen artifacts include source, templates, dependencies, and generation settings"
+  ],
+  "environment": {
+    "python": "3.12.13",
+    "pydantic": "2.14.3"
+  },
+  "artifacts": {
+    "candidate-manifest.json": "13fc70dc3cc0be7ce4d55792abcebf7e30ddb848db8beea0357b4195930d22ba",
+    "incidents.jsonl": "3a983c12e97983ae40912ac7eb65c7c8278b79be33da62ca50a4f2b1e2d154f6",
+    "reproduction/.python-version": "7b55f8e67b5623c4bef3fa691288da9437d79d3aba156de48d481db32ac7d16d",
+    "reproduction/Makefile": "c7b6a5839eb8f459ff503bf40de3ff95dc180dc9425eb5edaad242cd01dbe367",
+    "reproduction/README.md": "675d6d4344c402a5d5336fad619406d14e2b09f09b241b6f6e4719cba79e53f7",
+    "reproduction/data/scenarios/templates/config-01.jsonl": "ffda93166eb61f6b9fe9d76ea7f3368eb20770b75816d1ec87440f6d413acd3c",
+    "reproduction/data/scenarios/templates/config-02.jsonl": "2b3a39ecffc5f8033181797130965bf4c3d9963c064a22f9c2b9d880e2b10743",
+    "reproduction/data/scenarios/templates/config-03.jsonl": "b7ec63d1796fe3c935728c9981cf3797a646d39fe135fdc99fea489c0d23111e",
+    "reproduction/data/scenarios/templates/config-04.jsonl": "cc664fc6889c0d9cf192f89fc43f91de310e0a93f03794c81de1d115d12d1703",
+    "reproduction/data/scenarios/templates/config-05.jsonl": "9e7e288c1f65cc269b9fb52d120063b1ecdc42b13acc42308bea0d2c7f00c3cf",
+    "reproduction/data/scenarios/templates/config-06.jsonl": "2c25ed998c4ead984a264119d3dfab8bb297dd7189c131c9cc4b8f7f9733de18",
+    "reproduction/data/scenarios/templates/crash-01.jsonl": "acdc224fde4e26e0bd48123a2e61723aaa60b6dbbca01acd984146d127fa6945",
+    "reproduction/data/scenarios/templates/crash-02.jsonl": "4662a7f76514a05e8c7def07b9fdb3d477f364eb0f5a61338ad1e5b2555b0e3c",
+    "reproduction/data/scenarios/templates/crash-03.jsonl": "00aad0484196f51734c476fc8586a1317100fc0466844fec320bb6f5c37be5af",
+    "reproduction/data/scenarios/templates/crash-04.jsonl": "de9d332fb4a14a420cd2ab955e11269b975d713bfd85a0c8975e7e4cbbd803fd",
+    "reproduction/data/scenarios/templates/crash-05.jsonl": "3b19601ba2553d68a1cab34b04dfcf895ab7d36d2b103797c904b504c9934f92",
+    "reproduction/data/scenarios/templates/crash-06.jsonl": "2260e775599c0ad7aaaa3414faa019bdeee0232910a6ffb00b14c1f699aebfda",
+    "reproduction/data/scenarios/templates/image-01.jsonl": "5bf611eb25862f75b7bb22aa684e27de61e9cdd4165c44a7929a777996093659",
+    "reproduction/data/scenarios/templates/image-02.jsonl": "5f249bc57477e10863c4a58f211eecad5e9668b96ac53ca93532f49787c30c92",
+    "reproduction/data/scenarios/templates/image-03.jsonl": "2c57c0740b007c31bc779898f0c11f476fa8b79596fa1666026ba9699b1880b7",
+    "reproduction/data/scenarios/templates/image-04.jsonl": "dcacb106c60e18f06648e813a01a4acdfe945bd5fdd7de29723d13d5dd8b36c0",
+    "reproduction/data/scenarios/templates/image-05.jsonl": "c6290d3d384ae4bd73774c8cb525af76a1f31b20b559724ce64541b45772ac4b",
+    "reproduction/data/scenarios/templates/image-06.jsonl": "a1cc9edfdc122701890a08ddca73e4dd24ea656b0a09ab213d1a241c54d44545",
+    "reproduction/data/scenarios/templates/oom-01.jsonl": "db5b40fa01f90567876ef45181f149a97c84f36a9479440d21bf771afd6691f5",
+    "reproduction/data/scenarios/templates/oom-02.jsonl": "8bd6904bdeaae5f13523173f1dd9da15eb4999c4793db2c690c7e90f9549576b",
+    "reproduction/data/scenarios/templates/oom-03.jsonl": "e4372389da67dba7f0fc7e30167452fa7bc6d5df8120ba2e8e76e90b65942e74",
+    "reproduction/data/scenarios/templates/oom-04.jsonl": "b5119d51eadff0c286427e871e0a81ed39582330e3762c39aa3c183e7abee8d7",
+    "reproduction/data/scenarios/templates/oom-05.jsonl": "58683720b5a3f5bfb1625ba9f8b6e3105ee29565c196a4a4966a1a6287f6ef97",
+    "reproduction/data/scenarios/templates/oom-06.jsonl": "8f6f28a4191f1448db9ecd3c443d413f30a8e68838dba692309b9f8ab1bd33e3",
+    "reproduction/data/scenarios/templates/probe-01.jsonl": "01ee690625271e45a25a9fd108803de95bc2462ae210bd9078ccea702f227bdf",
+    "reproduction/data/scenarios/templates/probe-02.jsonl": "7e73ecfecfc362ab23f07088adca7566180ca0d579f88e5ab7fed146b4130b13",
+    "reproduction/data/scenarios/templates/probe-03.jsonl": "24c896924551032e75956906af0791d266a098a9862707116a9ef01c074263e2",
+    "reproduction/data/scenarios/templates/probe-04.jsonl": "9feb6a4f7b38e3a57d5f048bb67ff686f81246d31745266f517268904c3b2c17",
+    "reproduction/data/scenarios/templates/probe-05.jsonl": "fcfede7854370c66cd6507a2b8b951fff464b205de4e48dbdcd5986ac5a31a12",
+    "reproduction/data/scenarios/templates/probe-06.jsonl": "410b5fe985572322751e57f0e92510c314f40eaed8ec5b79ac7e1ce27d15cf06",
+    "reproduction/data/scenarios/templates/schedule-01.jsonl": "0ccea5486fe7c5aa7ce11bdffc6de17fe8f5b3d0d83928c5b1e265b35e6244bc",
+    "reproduction/data/scenarios/templates/schedule-02.jsonl": "656828c8600ee921e87f8a26c2075cbbde2fe34e7ee1d99ccfda0ec4027a8aca",
+    "reproduction/data/scenarios/templates/schedule-03.jsonl": "5af47a5c6529bf93ae051ad4b11c473900ebb76070680e53f84cb65a1449597d",
+    "reproduction/data/scenarios/templates/schedule-04.jsonl": "7eb7595759036fc5eeb848fb9bd292a57afc6cea21785847cebfb24da04ecc40",
+    "reproduction/data/scenarios/templates/schedule-05.jsonl": "4f4debbe33318f22e6f1afd836d3369a0ffd5714b0dec3f4ead71cc8cb83a689",
+    "reproduction/data/scenarios/templates/schedule-06.jsonl": "cd03c94cbe46731e6f434b26322d4e58f80db3dceb6d335cd284a3d8beeef7f0",
+    "reproduction/data/scenarios/templates/unknown-01.jsonl": "2c1f5c257e016a3527b1335915cfefacdf6aaadf010f20cec609858fc7f1d39e",
+    "reproduction/data/scenarios/templates/unknown-02.jsonl": "f44d1175d57c0174d5af5bc9931a67db9684aaed8651b832447241789d13da82",
+    "reproduction/data/scenarios/templates/unknown-03.jsonl": "ae341f22386f8b803042a4d409317144d862a5243df1de9dd8e174bc70496952",
+    "reproduction/data/scenarios/templates/unknown-04.jsonl": "c7c276cb505c24c15f571d33cc3e5af9030645d2bc9bca9e5319ec5e57cc6f94",
+    "reproduction/data/scenarios/templates/unknown-05.jsonl": "c656a3437309b4c979da7f4c67c621e74d0d00c0215ac919eb4569f18fac76db",
+    "reproduction/data/scenarios/templates/unknown-06.jsonl": "9c9f2d33e441569e10a841f995929883549cd08ac082f5e3ed50c421fd8f626e",
+    "reproduction/pyproject.toml": "eb8b325b8a046c15e0b2e8649492da266389958dade41d8fdd7f13cc18507de1",
+    "reproduction/src/logmind/__init__.py": "988c655169cd7bb24d5e0b382990f0a5924452e13b8e4bc755e62575777dcc38",
+    "reproduction/src/logmind/__main__.py": "4a3e01b22a22279b28e06204878233d27dc71cbd1316bac2cd3349d6b8fc29cf",
+    "reproduction/src/logmind/cli.py": "ef0271427ee5aa6e33696b0da67bdcd923c53920963f42308bfac721a8c8c08c",
+    "reproduction/src/logmind/freezing.py": "328ac90f21f0ca0ce38e710f2ae002b97c42206d23bee7357ad1dc7680ba996d",
+    "reproduction/src/logmind/generation.py": "778863460e1299257cbfe779d2a4ad28a8504fe7067b447727d3eb30d26f17c8",
+    "reproduction/src/logmind/jsonl.py": "23a0434a3f2b4ffc2b62b2914a5e38173ea47b3ee1e60ba4f87dc0085a620859",
+    "reproduction/src/logmind/schemas.py": "9b645de0fc8f1880bc1f2195c49a59b17aebd24687d069dccf88a26ba196e4c1",
+    "reproduction/uv.lock": "7b4fa2860e18a666a3032dff0ae802c1e4a9711db606741c6da579a127b3c137",
+    "test.jsonl": "80ee3bf10203c44a11f8afdb61c226d18f47cd30e9e1289b3404b02d97084c86",
+    "train.jsonl": "3b52220554477992a3919c1c9e8dea771fe42a9ba862f156a2e826f51afdfa32",
+    "validation.jsonl": "05ec83ee5e99ea8edc1efb9fd3671ffc66f6dbc02ef9e38306b7574a4095e34c"
+  }
+}
